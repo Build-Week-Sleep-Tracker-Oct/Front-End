@@ -2,31 +2,33 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
 
-import { fetchData, postData } from '../actions'
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { fetchData } from '../actions'
 
-import PastSleepData from './PastSleepData'
 
-const Tracker = (props) => {
-    useEffect(() => {
-        props.fetchData()
-    }, [props.isPosting])
 
-    console.log(props.data)
+const TrackerList = (props) => {
+
 
     return (
         <div>
             <p>
-                {props.isFetching ? <Loader
+                {props.isFetching ? 
+                <Loader
                     type="Rings"
                     color="#00BFFF"
                     height={100}
                     width={100}
-                /> : ''}
+                /> 
+                : ''}
             </p>
-
             {props.data.map(item => (
-                <PastSleepData item={item} key={item.id} />
+                <div key={item.id}>
+                    <p>{item.date}</p>
+                    <p>{item.feels}</p>
+                    <p>{item.notes}</p>
+                    <p>{item.timeFrom}</p>
+                    <p>{item.timeTo}</p>
+                </div>
             ))}
         </div>
     )
@@ -45,4 +47,4 @@ const mapStatetoProps = state => {
 export default connect(
     mapStatetoProps,
     { fetchData }
-)(Tracker)
+)(TrackerList)
