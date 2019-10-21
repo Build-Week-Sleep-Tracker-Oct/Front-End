@@ -11,39 +11,51 @@ let nextId = 7;
 let friends = [
   {
     id: 1,
-    name: 'Ben',
-    age: 30,
-    email: 'ben@lambdaschool.com'
+    date: '10/16/2019',
+    timeFrom: 30,
+    timeTo: 'ben@lambdaschool.com',
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 2,
-    name: 'Austen',
-    age: 45,
-    email: 'austen@lambdaschool.com'
+    date: '10/17/2019',
+    timeFrom: 45,
+    timeTo: 'austen@lambdaschool.com',
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 3,
-    name: 'Ryan',
-    age: 15,
-    email: 'ryan@lambdaschool.com'
+    date: '10/18/2019',
+    timeFrom: 15,
+    timeTo: 'ryan@lambdaschool.com',
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 4,
-    name: 'Dustin',
-    age: 25,
-    email: 'D-munny@lambdaschool.com'
+    date: '10/19/2019',
+    timeFrom: 25,
+    timeTo: 'D-munny@lambdaschool.com',
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 5,
-    name: 'Sean',
-    age: 35,
-    email: 'sean@lambdaschool.com'
+    date: '10/20/2019',
+    timeFrom: 35,
+    timeTo: 'sean@lambdaschool.com',
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 6,
-    name: 'Michelle',
-    age: 67,
-    email: 'michelle@gmail.com'
+    date: '10/21/2019',
+    timeFrom: 67,
+    timeTo: 'michelle@gmail.com',
+    feels: '😃',
+    notes: 'Slept Great'
   }
 ];
 
@@ -74,13 +86,13 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-app.get('/api/friends', authenticator, (req, res) => {
+app.get('/api/data', authenticator, (req, res) => {
   setTimeout(() => {
     res.send(friends);
   }, 1000);
 });
 
-app.get('/api/friends/:id', authenticator, (req, res) => {
+app.get('/api/data/:id', authenticator, (req, res) => {
   const friend = friends.find(f => f.id == req.params.id);
 
   if (friend) {
@@ -90,7 +102,7 @@ app.get('/api/friends/:id', authenticator, (req, res) => {
   }
 });
 
-app.post('/api/friends', authenticator, (req, res) => {
+app.post('/api/data', authenticator, (req, res) => {
   const friend = { id: getNextId(), ...req.body };
 
   friends = [...friends, friend];
@@ -98,7 +110,7 @@ app.post('/api/friends', authenticator, (req, res) => {
   res.send(friends);
 });
 
-app.put('/api/friends/:id', authenticator, (req, res) => {
+app.put('/api/data/:id', authenticator, (req, res) => {
   const { id } = req.params;
 
   const friendIndex = friends.findIndex(f => f.id == id);
@@ -117,7 +129,7 @@ app.put('/api/friends/:id', authenticator, (req, res) => {
   }
 });
 
-app.delete('/api/friends/:id', authenticator, (req, res) => {
+app.delete('/api/data/:id', authenticator, (req, res) => {
   const { id } = req.params;
 
   friends = friends.filter(f => f.id !== Number(id));
