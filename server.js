@@ -14,42 +14,48 @@ let friends = [
     date: 'Ben',
     timeFrom: 30,
     timeTo: 'ben@lambdaschool.com',
-    feels: '😃'
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 2,
     date: 'Austen',
     timeFrom: 45,
     timeTo: 'austen@lambdaschool.com',
-    feels: '😃'
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 3,
     date: 'Ryan',
     timeFrom: 15,
     timeTo: 'ryan@lambdaschool.com',
-    feels: '😃'
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 4,
     date: 'Dustin',
     timeFrom: 25,
     timeTo: 'D-munny@lambdaschool.com',
-    feels: '😃'
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 5,
     date: 'Sean',
     timeFrom: 35,
     timeTo: 'sean@lambdaschool.com',
-    feels: '😃'
+    feels: '😃',
+    notes: 'Slept Great'
   },
   {
     id: 6,
     date: 'Michelle',
     timeFrom: 67,
     timeTo: 'michelle@gmail.com',
-    feels: '😃'
+    feels: '😃',
+    notes: 'Slept Great'
   }
 ];
 
