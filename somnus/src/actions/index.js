@@ -18,6 +18,12 @@ export const postData = (item) => dispatch => {
     dispatch({ type: START_POSTING })
         axiosWithAuth()
             .post(`/api/data`, item)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .then(res => 
+                dispatch({ 
+                    type: POST_SUCCES, payload: res.data
+                }))
+            .catch(err => 
+                dispatch({ 
+                    type: POST_FAILURE, payload: err
+                }))
 }

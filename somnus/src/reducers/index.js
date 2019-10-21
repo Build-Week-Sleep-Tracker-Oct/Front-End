@@ -28,6 +28,27 @@ const reducer = (state = initialState, action) => {
                 isFetching: false,
                 error: action.payload
             }
+        case START_POSTING:
+            return {
+                ...state,
+                isPosting: true,
+                error: ''
+            }
+        case POST_SUCCES:
+            return {
+                ...state,
+                isPosting: false,
+                error: '',
+                data: state.data.map(item => {
+                    [...item, action.payload]
+                }) 
+            }
+        case POST_FAILURE:
+            return {
+                ...state,
+                isPosting: false,
+                error: action.payload
+            }
         default:
             return state
     }

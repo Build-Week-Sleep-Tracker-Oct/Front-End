@@ -11,7 +11,7 @@ let nextId = 7;
 let friends = [
   {
     id: 1,
-    date: 'Ben',
+    date: '10/16/2019',
     timeFrom: 30,
     timeTo: 'ben@lambdaschool.com',
     feels: '😃',
@@ -19,7 +19,7 @@ let friends = [
   },
   {
     id: 2,
-    date: 'Austen',
+    date: '10/17/2019',
     timeFrom: 45,
     timeTo: 'austen@lambdaschool.com',
     feels: '😃',
@@ -27,7 +27,7 @@ let friends = [
   },
   {
     id: 3,
-    date: 'Ryan',
+    date: '10/18/2019',
     timeFrom: 15,
     timeTo: 'ryan@lambdaschool.com',
     feels: '😃',
@@ -35,7 +35,7 @@ let friends = [
   },
   {
     id: 4,
-    date: 'Dustin',
+    date: '10/19/2019',
     timeFrom: 25,
     timeTo: 'D-munny@lambdaschool.com',
     feels: '😃',
@@ -43,7 +43,7 @@ let friends = [
   },
   {
     id: 5,
-    date: 'Sean',
+    date: '10/20/2019',
     timeFrom: 35,
     timeTo: 'sean@lambdaschool.com',
     feels: '😃',
@@ -51,7 +51,7 @@ let friends = [
   },
   {
     id: 6,
-    date: 'Michelle',
+    date: '10/21/2019',
     timeFrom: 67,
     timeTo: 'michelle@gmail.com',
     feels: '😃',
@@ -92,7 +92,7 @@ app.get('/api/data', authenticator, (req, res) => {
   }, 1000);
 });
 
-app.get('/api/friends/:id', authenticator, (req, res) => {
+app.get('/api/data/:id', authenticator, (req, res) => {
   const friend = friends.find(f => f.id == req.params.id);
 
   if (friend) {
@@ -102,7 +102,7 @@ app.get('/api/friends/:id', authenticator, (req, res) => {
   }
 });
 
-app.post('/api/friends', authenticator, (req, res) => {
+app.post('/api/data', authenticator, (req, res) => {
   const friend = { id: getNextId(), ...req.body };
 
   friends = [...friends, friend];
@@ -110,7 +110,7 @@ app.post('/api/friends', authenticator, (req, res) => {
   res.send(friends);
 });
 
-app.put('/api/friends/:id', authenticator, (req, res) => {
+app.put('/api/data/:id', authenticator, (req, res) => {
   const { id } = req.params;
 
   const friendIndex = friends.findIndex(f => f.id == id);
@@ -129,7 +129,7 @@ app.put('/api/friends/:id', authenticator, (req, res) => {
   }
 });
 
-app.delete('/api/friends/:id', authenticator, (req, res) => {
+app.delete('/api/data/:id', authenticator, (req, res) => {
   const { id } = req.params;
 
   friends = friends.filter(f => f.id !== Number(id));

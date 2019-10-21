@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
 
-import { fetchData } from '../actions'
+import { fetchData, postData } from '../actions'
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 import PastSleepData from './PastSleepData'
@@ -11,10 +11,6 @@ const Tracker = (props) => {
     useEffect(() => {
         props.fetchData()
     }, [props.isPosting])
-
-    // if(props.isFetching) {
-    //     return <h2>Loading...</h2>
-    // }
 
     console.log(props.data)
 
