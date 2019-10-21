@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  font-family: azo-sans-web, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .App-logo {
@@ -74,8 +77,14 @@
 }
 
 
-.inputs[type=text] {
+.login input[type=text] {
   border: none;
-  border-bottom: 4px solid #f3c58e;
+  border-bottom: 4px solid #000;
+
+}
+
+.login input[type=password] {
+  border: none;
+  border-bottom: 4px solid #000;
 
 }
