@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import { axiosWithAuth } from '../utils/axiosWithAuth'
+
 class Login extends Component {
     state = {
         credentials: {
@@ -20,6 +22,14 @@ class Login extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
+        axiosWithAuth()
+            .post('/api/login', this.state.credentials)
+            .then(res => {
+                console.log(res)
+                localStorage.setItem('token', res.data.payload)
+                this.props.history.push('/tracker')
+            })
+            .catch(err => console.log(err))
         
     }
     render() {

@@ -11,39 +11,45 @@ let nextId = 7;
 let friends = [
   {
     id: 1,
-    name: 'Ben',
-    age: 30,
-    email: 'ben@lambdaschool.com'
+    date: 'Ben',
+    timeFrom: 30,
+    timeTo: 'ben@lambdaschool.com',
+    feels: '😃'
   },
   {
     id: 2,
-    name: 'Austen',
-    age: 45,
-    email: 'austen@lambdaschool.com'
+    date: 'Austen',
+    timeFrom: 45,
+    timeTo: 'austen@lambdaschool.com',
+    feels: '😃'
   },
   {
     id: 3,
-    name: 'Ryan',
-    age: 15,
-    email: 'ryan@lambdaschool.com'
+    date: 'Ryan',
+    timeFrom: 15,
+    timeTo: 'ryan@lambdaschool.com',
+    feels: '😃'
   },
   {
     id: 4,
-    name: 'Dustin',
-    age: 25,
-    email: 'D-munny@lambdaschool.com'
+    date: 'Dustin',
+    timeFrom: 25,
+    timeTo: 'D-munny@lambdaschool.com',
+    feels: '😃'
   },
   {
     id: 5,
-    name: 'Sean',
-    age: 35,
-    email: 'sean@lambdaschool.com'
+    date: 'Sean',
+    timeFrom: 35,
+    timeTo: 'sean@lambdaschool.com',
+    feels: '😃'
   },
   {
     id: 6,
-    name: 'Michelle',
-    age: 67,
-    email: 'michelle@gmail.com'
+    date: 'Michelle',
+    timeFrom: 67,
+    timeTo: 'michelle@gmail.com',
+    feels: '😃'
   }
 ];
 
@@ -74,7 +80,7 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-app.get('/api/friends', authenticator, (req, res) => {
+app.get('/api/data', authenticator, (req, res) => {
   setTimeout(() => {
     res.send(friends);
   }, 1000);
