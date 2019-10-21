@@ -6,6 +6,10 @@ const PastSleepData = props => {
         <div>
             <p>{props.item.date}</p>
             <p>{props.item.feels}</p>
+            <p>{props.item.notes}</p>
+            <p>{props.item.timeFrom}</p>
+            <p>{props.item.timeTo}</p>
+
         </div>
     )
 }
