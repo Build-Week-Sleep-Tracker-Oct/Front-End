@@ -1,6 +1,42 @@
 import React, {useState} from "react";
 import { connect } from 'react-redux'
 import { postData } from '../actions'
+import styled from "styled-components";
+
+const SleepForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+`;
+
+const SleepFormLabel = styled.label`
+    text-align: left;
+`;
+
+const DateInput = styled.input`
+    margin: 2% 0;
+`;
+
+const TimeInput = styled.input`
+    margin: 2% 0;
+`;
+
+const MoodInput = styled.select`
+    margin: 2% 0;
+    width: 60%;
+`;
+
+const NoteInput = styled.textarea`
+    margin: 2% 0;
+`;
+
+const SubmitButton = styled.button`
+    background: #FFBA08;
+    border-radius: 5px;
+    margin: 2% 0;
+    padding: 2%;
+    font-size: 18px;
+`;
 
 const SleepEntry = (props) => {
     const [entry, setEntry] = useState({
@@ -19,34 +55,33 @@ const SleepEntry = (props) => {
         event.preventDefault();
         props.postData(entry)
         props.history.push('/tracker')
-        //addNewEntry
-        // setEntry({date: "", timeFrom: "", timeTo: "", feels: "", notes: ""});
+        //addNewEntry        
     }
 
     return(
-        <form onSubmit={submitEntry}>
-            <label htmlFor="date">Date:</label>
-            <input name="date" id="date" type="date" placeholder="Date(MM-DD-YYYY)" onChange={changeHandler} value={entry.date} />
+        <SleepForm onSubmit={submitEntry}>
+            <SleepFormLabel htmlFor="date">Date:</SleepFormLabel>
+            <DateInput name="date" id="date" type="date" placeholder="Date(MM-DD-YYYY)" onChange={changeHandler} value={entry.date} />
             
-            <label htmlFor="timeFrom">From:</label>
-            <input name="timeFrom" id="timeFrom" type="time" onChange={changeHandler} value={entry.timeFrom} />
+            <SleepFormLabel htmlFor="timeFrom">From:</SleepFormLabel>
+            <TimeInput name="timeFrom" id="timeFrom" type="time" onChange={changeHandler} value={entry.timeFrom} />
 
-            <label htmlFor="timeTo">To:</label>
-            <input name="timeTo" id="timeTo" type="time" onChange={changeHandler} value={entry.timeTo} />
+            <SleepFormLabel htmlFor="timeTo">To:</SleepFormLabel>
+            <TimeInput name="timeTo" id="timeTo" type="time" onChange={changeHandler} value={entry.timeTo} />
 
-            <label htmlFor="feels">Feels:</label>
-            <select name="feels" onChange={changeHandler} value={entry.feels}>
+            <SleepFormLabel htmlFor="mood">Mood:</SleepFormLabel>
+            <MoodInput name="mood" onChange={changeHandler} value={entry.feels}>
                 <option>Please choose how you feel</option>
                 <option value="😀">😀</option>
                 <option value="😐">😐</option>
                 <option value="😭">😭</option>
                 <option value="😡">😡</option>
-            </select>
+            </MoodInput>
             
-            <label htmlFor="notes">notes:</label>
-            <input name="notes" id="notes" type="text" onChange={changeHandler} value={entry.notes} />
-            <button type="submit">Submit</button>
-        </form>
+            <SleepFormLabel htmlFor="notes">notes:</SleepFormLabel>
+            <NoteInput name="notes" id="notes" rows="10" cols="30" onChange={changeHandler} value={entry.notes} />
+            <SubmitButton type="submit">Submit</SubmitButton>
+        </SleepForm>
     );
 }
 
