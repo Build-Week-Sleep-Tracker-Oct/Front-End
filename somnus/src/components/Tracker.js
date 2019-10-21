@@ -1,19 +1,48 @@
 import React, { useEffect } from 'react'
-import axios from 'axios'
+import { connect } from 'react-redux'
+import Loader from 'react-loader-spinner'
+
+import { fetchData, postData } from '../actions'
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-const Tracker = () => {
+import PastSleepData from './PastSleepData'
+
+const Tracker = (props) => {
     useEffect(() => {
-        axiosWithAuth()
-            .get(`http://localhost:5000/api/data`)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-    }, [])
+        props.fetchData()
+    }, [props.isPosting])
+
+    console.log(props.data)
+
     return (
-        <>
-            Hello
-        </>
+        <div>
+            <p>
+                {props.isFetching ? <Loader
+                    type="Rings"
+                    color="#00BFFF"
+                    height={100}
+                    width={100}
+                /> : ''}
+            </p>
+
+            {props.data.map(item => (
+                <PastSleepData item={item} key={item.id} />
+            ))}
+        </div>
     )
 }
 
-export default Tracker
+const mapStatetoProps = state => {
+    return {
+        data: state.data,
+        isFetching: state.isFetching,
+        isPosting: state.isPosting,
+        error: state.error
+    }
+}
+
+
+export default connect(
+    mapStatetoProps,
+    { fetchData }
+)(Tracker)
