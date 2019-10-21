@@ -8,6 +8,10 @@ import { fetchData } from '../actions'
 
 const TrackerList = (props) => {
 
+    const entryRoute = (e, item) => {
+        e.preventDefault()
+        props.history.push(`/trackerlist/${item.id}`)
+    }
 
     return (
         <div>
@@ -22,7 +26,7 @@ const TrackerList = (props) => {
                 : ''}
             </p>
             {props.data.map(item => (
-                <div key={item.id}>
+                <div key={item.id} onClick={e => entryRoute(e, item)}>
                     <p>{item.date}</p>
                     <p>{item.feels}</p>
                     <p>{item.notes}</p>
