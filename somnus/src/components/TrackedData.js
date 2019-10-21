@@ -20,7 +20,7 @@ const TrackedData = props => {
                 <p>{sleepItem.notes}</p>
                 <p>{sleepItem.timeFrom}</p>
                 <p>{sleepItem.timeTo}</p>
-                <button>Edit</button>
+                <button onClick={() => props.history.push(`/edit-tracker/${sleepItem.id}`)}>Edit</button>
                 <button>Delete</button>
             </div>
         </>

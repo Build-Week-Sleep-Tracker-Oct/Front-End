@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import { connect } from 'react-redux'
 
@@ -9,14 +9,16 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import TrackerList from './components/TrackerList';
 import PrivateRoute from './components/PrivateRoute';
-import SleepEntry from './components/SleepEntry'
+import SleepEntry from './components/SleepEntry';
 import TrackedData from './components/TrackedData';
+import UpdateEntry from './components/UpdateEntry';
 
 const App = (props) => {
-
   useEffect(() => {
     props.fetchData()
+    
 }, [props.isPosting])
+
 
   return (
     <Router>
@@ -26,6 +28,9 @@ const App = (props) => {
           <PrivateRoute exact path='/sleepentry' component={SleepEntry} />
           <Route path='/trackerlist/:id' render={props => (
             <TrackedData {...props} /> )} />
+          <Route path='/edit-tracker/:id' render={props => (
+            <UpdateEntry {...props} updateData={props.data} />
+          )} />
           <Route exact path='/' component={Login} />
           <Route exact path='/signup' component={SignUp} />
         </Switch>
