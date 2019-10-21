@@ -39,9 +39,9 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 isPosting: false,
                 error: '',
-                data: state.data.map(item => {
+                data: state.data.map(item => (
                     [...item, action.payload]
-                }) 
+                )) 
             }
         case POST_FAILURE:
             return {
