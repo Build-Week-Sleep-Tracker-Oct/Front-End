@@ -13,12 +13,9 @@ const SleepFormLabel = styled.label`
     text-align: left;
 `;
 
-const DateInput = styled.input`
-    margin: 2% 0;
-`;
-
 const TimeInput = styled.input`
     margin: 2% 0;
+    width: 50%;
 `;
 
 const MoodInput = styled.select`
@@ -59,18 +56,16 @@ const SleepEntry = (props) => {
 
     return(
         <SleepForm onSubmit={submitEntry}>
-            {/* <SleepFormLabel htmlFor="date">Date:</SleepFormLabel>
-            <DateInput name="date" id="date" type="date" placeholder="Date(MM-DD-YYYY)" onChange={changeHandler} value={entry.date} /> */}
-            
-            <SleepFormLabel htmlFor="timeFrom">From:</SleepFormLabel>
-            <TimeInput name="timeFrom" id="timeFrom" type="datetime-local" onChange={changeHandler} value={entry.dateTimeFrom} />
 
-            <SleepFormLabel htmlFor="timeTo">To:</SleepFormLabel>
-            <TimeInput name="timeTo" id="timeTo" type="datetime-local" onChange={changeHandler} value={entry.dateTimeTo} />
+            <SleepFormLabel htmlFor="dateTimeFrom">From:</SleepFormLabel>
+            <TimeInput name="dateTimeFrom" id="dateTimeFrom" type="datetime-local" onChange={changeHandler} value={entry.dateTimeFrom} />
 
-            <SleepFormLabel htmlFor="mood">Mood:</SleepFormLabel>
-            <MoodInput name="mood" onChange={e => changeHandler(e)} value={entry.feels}>
-                <option value="">Please choose how you feel</option>
+            <SleepFormLabel htmlFor="dateTimeTo">To:</SleepFormLabel>
+            <TimeInput name="dateTimeTo" id="dateTimeTo" type="datetime-local" onChange={changeHandler} value={entry.dateTimeTo} />
+
+            <SleepFormLabel htmlFor="feels">Mood:</SleepFormLabel>
+            <MoodInput name="feels" onChange={e => changeHandler(e)} value={entry.feels}>
+                <option selected disabled value="">Please choose how you feel</option>
                 <option value="4">😀</option>
                 <option value="3">😐</option>
                 <option value="2">😭</option>
@@ -79,6 +74,7 @@ const SleepEntry = (props) => {
             
             <SleepFormLabel htmlFor="notes">notes:</SleepFormLabel>
             <NoteInput name="notes" id="notes" rows="10" cols="30" onChange={changeHandler} value={entry.notes} />
+
             <SubmitButton type="submit">Submit</SubmitButton>
         </SleepForm>
     );
