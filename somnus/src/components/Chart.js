@@ -5,13 +5,8 @@ import { Line } from 'react-chartjs-2'
 import Moment from 'react-moment';
 
 const Chart = props => {
-    
-    // useEffect(() => {
-    //     axios.get('https://sleep-tracker-bw.herokuapp.com')
-    //         .then(res => console.log(res))
-    //         .catch(err => console.log(err))
-    // }, [])
 
+    console.log(props.data)
     let sleepFrom = props.data.map(item => {
         // return item.dateTimeFrom
         return new Date(item.dateTimeFrom).getHours()
@@ -53,14 +48,15 @@ const Chart = props => {
       }
 
     let nightlyData = compare(sleepFrom, sleepTo)
-    console.log(nightlyData)
 
     const data = {
         labels: ['1', '2', '3', '4', '5', '6'],
+        xAxisID: ['Hours Slept'],
+        yAxisID: ['Day of the Month'],
         datasets: [
             {
                 label: 'Time Slept',
-                backgroundColor: 'purple',
+                borderColor: 'purple',
                 data: nightlyData
             },
             // {
