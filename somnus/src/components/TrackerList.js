@@ -17,6 +17,22 @@ const TrackerList = (props) => {
         return <Loader type="Rings" color="#00BFFF" height={100} width={100} /> 
     }
 
+    
+    // 😀
+    // 😐
+    // 😭
+    // 😡
+
+    // if(props.data.feels === 1){
+    //     return <p>😡</p>
+    // } else if(props.data.feels === 2) {
+    //     return <p>😭</p>
+    // }else if(props.data.feels === 3) {
+    //     return <p>😐</p>
+    // }else if(props.data.feels === 4) {
+    //     return <p>😀</p>
+    // }
+
     console.log(props.data)
     return (
         <div>
@@ -30,14 +46,45 @@ const TrackerList = (props) => {
                 /> 
                 : ''}
             </p>
-            {props.data.map(item => (
-                <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
-                    <p>{item.feels}</p>
-                    <p>{item.notes}</p>
-                    <p>{item.dateTimeFrom}</p>
-                    <p>{item.dateTimeTo}</p>
-                </div>
-            ))}
+            {props.data.map(item => {
+                if(Number(item.feels) === 1){
+                    return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
+                                <p>😡</p>
+                                <p>{item.notes}</p>
+                                <p>{item.dateTimeFrom}</p>
+                                <p>{item.dateTimeTo}</p>
+                            </div>
+                } else if(Number(item.feels) === 2) {
+                    return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
+                                <p>😭</p>
+                                <p>{item.notes}</p>
+                                <p>{item.dateTimeFrom}</p>
+                                <p>{item.dateTimeTo}</p>
+                            </div>
+                } else if(Number(item.feels) === 3) {
+                    return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
+                                <p>😐</p>
+                                <p>{item.notes}</p>
+                                <p>{item.dateTimeFrom}</p>
+                                <p>{item.dateTimeTo}</p>
+                            </div>
+                } else if(Number(item.feels) === 4) {
+                    return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
+                                <p>😀</p>
+                                <p>{item.notes}</p>
+                                <p>{item.dateTimeFrom}</p>
+                                <p>{item.dateTimeTo}</p>
+                            </div>
+                } else {
+                    return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
+                                <p>{item.feels}</p>
+                                <p>{item.notes}</p>
+                                <p>{item.dateTimeFrom}</p>
+                                <p>{item.dateTimeTo}</p>
+                            </div>
+
+                }
+            })}
             <button className='addEntryButton' onClick={() => props.history.push('/sleepentry')}>Add Entry</button>
         </div>
     )

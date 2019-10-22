@@ -6,9 +6,13 @@ import { axiosWithAuth } from '../utils/axiosWithAuth'
 import { updateData } from '../actions'
 
 const initialEntry = {
-    date: '',
-    timeFrom: '',
-    timeTo: '',
+    // date: '',
+    // timeFrom: '',
+    // timeTo: '',
+    // feels: '',
+    // notes: ''
+    dateTimeFrom: '',
+    dateTimeTo: '',
     feels: '',
     notes: ''
 }
@@ -52,40 +56,30 @@ const UpdateEntry = props => {
         <div>
             <form onSubmit={handleSubmit}>
                 <input 
-                    name='date'
-                    placeholder='Date'
-                    type='text'
-                    onChange={changeHandler}
-                    value={entry.date}
-                />
-                <input 
-                    name='timeFrom'
+                    name='dateTimeFrom'
                     placeholder='Time From'
                     type='text'
                     onChange={changeHandler}
-                    value={entry.timeFrom}
+                    value={entry.dateTimeFrom}
                 />
                 <input 
-                    name='timeTo'
+                    name='dateTimeTo'
                     placeholder='Time To'
                     type='text'
                     onChange={changeHandler}
-                    value={entry.timeTo}
+                    value={entry.dateTimeTo}
                 />
-                <input 
-                    name='feels'
-                    placeholder='Feels'
-                    type='text'
-                    onChange={changeHandler}
-                    value={entry.feels}
-                />
-                <input 
-                    name='notes'
-                    placeholder='Notes'
-                    type='text'
-                    onChange={changeHandler}
-                    value={entry.notes}
-                />
+            
+            {/* <input name="dateTimeFrom" id="dateTimeFrom" type="datetime-local" onChange={changeHandler} value={entry.dateTimeFrom} />
+            <input name="dateTimeTo" id="dateTimeTo" placeholder='123' type="datetime-local" onChange={changeHandler} value={entry.dateTimeTo} /> */}
+                <select name="feels" onChange={e => changeHandler(e)} value={entry.feels}>
+                    <option selected disabled value="">Please choose how you feel</option>
+                    <option value="4">😀</option>
+                    <option value="3">😐</option>
+                    <option value="2">😭</option>
+                    <option value="1">😡</option>
+                </select>
+                <textarea name="notes" id="notes" rows="10" cols="30" onChange={changeHandler} value={entry.notes} />
                 <button>Update</button>
             </form>
         </div>
