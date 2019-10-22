@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { postData } from '../actions'
 import styled from "styled-components";
 import {NavLink} from "react-router-dom";
+import SideBar from "./sidebar";
 
 const SleepForm = styled.form`
     display: flex;
@@ -58,8 +59,10 @@ const SleepEntry = (props) => {
     }
 
     return(
-        <div className="sleep-entry">
+        <div className="sleep-entry" id="slepp-entry">
             <h1>Somnus</h1>
+            <SideBar pageWrapId={"page-wrap"} outerContainerId={"sleep-entry"} />
+            <div id="page-wrap">
         <SleepForm onSubmit={submitEntry}>
 
             <SleepFormLabel htmlFor="dateTimeFrom">From</SleepFormLabel>
@@ -84,6 +87,7 @@ const SleepEntry = (props) => {
             
             <NavLink to={'/trackerlist'} style={{color:`white`, fontSize: `1.4rem`, textDecoration: `none`, textAlign: `left`}}>Back</NavLink>
         </SleepForm>
+        </div>
         </div>
     );
 }
