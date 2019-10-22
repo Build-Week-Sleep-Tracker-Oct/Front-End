@@ -70,12 +70,12 @@ const SleepEntry = (props) => {
             <TimeInput name="timeTo" id="timeTo" type="time" onChange={changeHandler} value={entry.timeTo} />
 
             <SleepFormLabel htmlFor="mood">Mood:</SleepFormLabel>
-            <MoodInput name="mood" onChange={changeHandler} value={entry.feels}>
-                <option>Please choose how you feel</option>
-                <option value="😀">😀</option>
-                <option value="😐">😐</option>
-                <option value="😭">😭</option>
-                <option value="😡">😡</option>
+            <MoodInput name="mood" onChange={e => changeHandler(e)} value={entry.feels}>
+                <option value="">Please choose how you feel</option>
+                <option value="4">😀</option>
+                <option value="3">😐</option>
+                <option value="2">😭</option>
+                <option value="1">😡</option>
             </MoodInput>
             
             <SleepFormLabel htmlFor="notes">notes:</SleepFormLabel>
