@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
 
 import { fetchData } from '../actions'
+import Chart from './Chart'
 
 
 
@@ -17,25 +18,9 @@ const TrackerList = (props) => {
         return <Loader type="Rings" color="#00BFFF" height={100} width={100} /> 
     }
 
-    
-    // 😀
-    // 😐
-    // 😭
-    // 😡
-
-    // if(props.data.feels === 1){
-    //     return <p>😡</p>
-    // } else if(props.data.feels === 2) {
-    //     return <p>😭</p>
-    // }else if(props.data.feels === 3) {
-    //     return <p>😐</p>
-    // }else if(props.data.feels === 4) {
-    //     return <p>😀</p>
-    // }
-
-    console.log(props.data)
     return (
         <div>
+            <Chart />
             <p>
                 {props.isFetching ? 
                 <Loader

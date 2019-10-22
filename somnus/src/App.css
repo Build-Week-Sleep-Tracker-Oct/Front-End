@@ -104,3 +104,8 @@
 .addEntryButton {
   font-size: 2rem;
 }
+
+.chart {
+  width: 80%;
+  margin: auto;
+}
