@@ -16,11 +16,10 @@ const TrackedData = props => {
     return (
         <>
             <div key={sleepItem.id}>
-                <p>{sleepItem.date}</p>
+                <p>{sleepItem.dateTimeFrom}</p>
+                <p>{sleepItem.dateTimeTo}</p>
                 <p>{sleepItem.feels}</p>
                 <p>{sleepItem.notes}</p>
-                <p>{sleepItem.timeFrom}</p>
-                <p>{sleepItem.timeTo}</p>
                 <button onClick={() => props.history.push(`/edit-tracker/${sleepItem.id}`)}>Edit</button>
                 <button onClick={() => {props.deleteData(sleepItem); props.history.push('/trackerlist')}}>Delete</button>
             </div>
