@@ -32,11 +32,10 @@ const TrackerList = (props) => {
             </p>
             {props.data.map(item => (
                 <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
-                    <p>{item.date}</p>
                     <p>{item.feels}</p>
                     <p>{item.notes}</p>
-                    <p>{item.timeFrom}</p>
-                    <p>{item.timeTo}</p>
+                    <p>{item.dateTimeFrom}</p>
+                    <p>{item.dateTimeTo}</p>
                 </div>
             ))}
             <button className='addEntryButton' onClick={() => props.history.push('/sleepentry')}>Add Entry</button>
