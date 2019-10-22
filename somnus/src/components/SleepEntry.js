@@ -40,9 +40,8 @@ const SubmitButton = styled.button`
 
 const SleepEntry = (props) => {
     const [entry, setEntry] = useState({
-       date: "",
-       timeFrom: "",
-       timeTo: "",
+       dateTimeFrom: "",
+       dateTimeTo: "",
        feels: "",
        notes: "" 
     });
@@ -60,22 +59,22 @@ const SleepEntry = (props) => {
 
     return(
         <SleepForm onSubmit={submitEntry}>
-            <SleepFormLabel htmlFor="date">Date:</SleepFormLabel>
-            <DateInput name="date" id="date" type="date" placeholder="Date(MM-DD-YYYY)" onChange={changeHandler} value={entry.date} />
+            {/* <SleepFormLabel htmlFor="date">Date:</SleepFormLabel>
+            <DateInput name="date" id="date" type="date" placeholder="Date(MM-DD-YYYY)" onChange={changeHandler} value={entry.date} /> */}
             
             <SleepFormLabel htmlFor="timeFrom">From:</SleepFormLabel>
-            <TimeInput name="timeFrom" id="timeFrom" type="time" onChange={changeHandler} value={entry.timeFrom} />
+            <TimeInput name="timeFrom" id="timeFrom" type="datetime-local" onChange={changeHandler} value={entry.dateTimeFrom} />
 
             <SleepFormLabel htmlFor="timeTo">To:</SleepFormLabel>
-            <TimeInput name="timeTo" id="timeTo" type="time" onChange={changeHandler} value={entry.timeTo} />
+            <TimeInput name="timeTo" id="timeTo" type="datetime-local" onChange={changeHandler} value={entry.dateTimeTo} />
 
             <SleepFormLabel htmlFor="mood">Mood:</SleepFormLabel>
-            <MoodInput name="mood" onChange={changeHandler} value={entry.feels}>
-                <option>Please choose how you feel</option>
-                <option value="😀">😀</option>
-                <option value="😐">😐</option>
-                <option value="😭">😭</option>
-                <option value="😡">😡</option>
+            <MoodInput name="mood" onChange={e => changeHandler(e)} value={entry.feels}>
+                <option value="">Please choose how you feel</option>
+                <option value="4">😀</option>
+                <option value="3">😐</option>
+                <option value="2">😭</option>
+                <option value="1">😡</option>
             </MoodInput>
             
             <SleepFormLabel htmlFor="notes">notes:</SleepFormLabel>
