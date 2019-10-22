@@ -50,7 +50,7 @@ const SleepEntry = (props) => {
     const submitEntry = event => {
         event.preventDefault();
         props.postData(entry)
-        props.history.push('/tracker')
+        props.history.push('/trackerlist')
         //addNewEntry        
     }
 

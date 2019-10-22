@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
 
+import { deleteData } from '../actions'
+
 const TrackedData = props => {
     const sleepItem = props.data.find(
         item => `${item.id}` === props.match.params.id
@@ -11,7 +13,6 @@ const TrackedData = props => {
         return <Loader type="Rings" color="#00BFFF" height={100} width={100} /> 
     }
     
-    console.log(sleepItem)
     return (
         <>
             <div key={sleepItem.id}>
@@ -20,8 +21,8 @@ const TrackedData = props => {
                 <p>{sleepItem.notes}</p>
                 <p>{sleepItem.timeFrom}</p>
                 <p>{sleepItem.timeTo}</p>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={() => props.history.push(`/edit-tracker/${sleepItem.id}`)}>Edit</button>
+                <button onClick={() => {props.deleteData(sleepItem); props.history.push('/trackerlist')}}>Delete</button>
             </div>
         </>
     )
@@ -39,7 +40,7 @@ const mapStatetoProps = state => {
 
 export default connect(
     mapStatetoProps,
-    {  }
+    { deleteData }
 )(TrackedData)
 
 // {Date(props.item.date).slice(0, 24)}
