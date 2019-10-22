@@ -35,9 +35,6 @@ const UpdateEntry = props => {
     }
     
 
-    
-
-
     const changeHandler = e => {
         e.preventDefault()
         setEntry({
