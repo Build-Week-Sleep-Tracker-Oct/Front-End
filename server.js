@@ -11,49 +11,43 @@ let nextId = 7;
 let friends = [
   {
     id: 1,
-    date: '10/16/2019',
-    timeFrom: 30,
-    timeTo: 'ben@lambdaschool.com',
+    dateTimeFrom: '2019-10-16 10:00 pm',
+    dateTimeTo: '2019-10-17 10:00 am',
     feels: '😃',
     notes: 'Slept Great'
   },
   {
     id: 2,
-    date: '10/17/2019',
-    timeFrom: 45,
-    timeTo: 'austen@lambdaschool.com',
+    dateTimeFrom: '2019-10-17 11:00 pm',
+    dateTimeTo: '2019-10-18 7:00 am',
     feels: '😃',
     notes: 'Slept Great'
   },
   {
     id: 3,
-    date: '10/18/2019',
-    timeFrom: 15,
-    timeTo: 'ryan@lambdaschool.com',
+    dateTimeFrom: '2019-10-18 10:00 pm',
+    dateTimeTo: '2019-10-19 6:00 am',
     feels: '😃',
     notes: 'Slept Great'
   },
   {
     id: 4,
-    date: '10/19/2019',
-    timeFrom: 25,
-    timeTo: 'D-munny@lambdaschool.com',
+    dateTimeFrom: '2019-10-19 9:00 pm',
+    dateTimeTo: '2019-10-20 7:00 am',
     feels: '😃',
     notes: 'Slept Great'
   },
   {
     id: 5,
-    date: '10/20/2019',
-    timeFrom: 35,
-    timeTo: 'sean@lambdaschool.com',
+    dateTimeFrom: '2019-10-20 11:00 pm',
+    dateTimeTo: '2019-10-21 6:00 am',
     feels: '😃',
     notes: 'Slept Great'
   },
   {
     id: 6,
-    date: '10/21/2019',
-    timeFrom: 67,
-    timeTo: 'michelle@gmail.com',
+    dateTimeFrom: '2019-10-21 9:00 pm',
+    dateTimeTo: '2019-10-22 5:00 am',
     feels: '😃',
     notes: 'Slept Great'
   }

@@ -5,7 +5,7 @@
   font-style: normal;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
 }
 
@@ -22,13 +22,18 @@
 
 .App-link {
   color: #09d3ac;
-}
+} */
 
 
 .login {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  height: 100vh;
   font-size: 2rem;
+  background-image: url('./assets/Somnus_Splash_Page.svg');
+  background-repeat: no-repeat;
+  background-size: 150%;
 }
 
 .login form {
@@ -81,10 +86,26 @@
   border: none;
   border-bottom: 4px solid #000;
 
+  opacity: 0.2;
+
 }
 
 .login input[type=password] {
   border: none;
   border-bottom: 4px solid #000;
+  opacity: 0.2;
+}
 
+.entry {
+  border: 2px solid black;
+  margin: 1rem;
+}
+
+.addEntryButton {
+  font-size: 2rem;
+}
+
+.chart {
+  width: 80%;
+  margin: auto;
 }

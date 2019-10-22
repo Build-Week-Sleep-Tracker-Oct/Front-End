@@ -12,7 +12,7 @@ export const fetchData = () => dispatch => {
 }
 
 export const START_POSTING = 'START_POSTING'
-export const POST_SUCCES = 'POST_SUCCES'
+export const POST_SUCCESS = 'POST_SUCCES'
 export const POST_FAILURE = 'POST_FAILURE'
 export const postData = (item) => dispatch => {
     dispatch({ type: START_POSTING })
@@ -20,10 +20,42 @@ export const postData = (item) => dispatch => {
             .post(`/api/data`, item)
             .then(res => 
                 dispatch({ 
-                    type: POST_SUCCES, payload: res.data
+                    type: POST_SUCCESS, payload: res.data
                 }))
             .catch(err => 
                 dispatch({ 
                     type: POST_FAILURE, payload: err
                 }))
+}
+
+export const START_UPDATING = 'START_UPDATING'
+export const UPDATE_SUCCESS = 'UPDATE_SUCCESS'
+export const UPDATE_FAILURE = 'UPDATE_FAILURE'
+export const updateData = item => dispatch => {
+    dispatch({ type: START_UPDATING })
+        axiosWithAuth()
+            .put(`/api/data/${item.id}`, item)
+            .then(res => (
+                console.log(res.data),
+                dispatch({ type: UPDATE_SUCCESS, payload: res.data
+                })
+            ))
+            .catch(err => dispatch({ type: UPDATE_FAILURE, payload: err
+            }))
+}
+
+export const START_DELETION = 'START_DELETION'
+export const DELETION_SUCCESS = 'DELETION_SUCCESS'
+export const DELETION_FAILURE = 'DELETION_FAILER'
+export const deleteData = item => dispatch => {
+    dispatch({ type: START_DELETION })
+        axiosWithAuth()
+            .delete(`/api/data/${item.id}`, item)
+            .then(res => (
+                console.log(res.data),
+                dispatch({ type: DELETION_SUCCESS, payload: res.data
+                })
+            ))
+            .catch(err => dispatch({ type: DELETION_FAILURE, payload: err
+            }))
 }

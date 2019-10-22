@@ -1,11 +1,15 @@
-import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, START_POSTING, POST_SUCCES, POST_FAILURE } from '../actions';
+import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, START_POSTING, POST_SUCCESS, POST_FAILURE, START_UPDATING, UPDATE_SUCCESS, UPDATE_FAILURE, START_DELETION, DELETION_SUCCESS, DELETION_FAILURE } from '../actions';
+import { isTerminatorless } from '@babel/types';
 
 const initialState = {
     data: [],
     isFetching: false,
     isPosting: false,
+    isUpdating: false,
+    isDeleting: false,
     error: ''
 }
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -34,7 +38,7 @@ const reducer = (state = initialState, action) => {
                 isPosting: true,
                 error: ''
             }
-        case POST_SUCCES:
+        case POST_SUCCESS:
             return {
                 ...state,
                 isPosting: false,
@@ -47,6 +51,53 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isPosting: false,
+                error: action.payload
+            }
+        case START_UPDATING:
+            return {
+                ...state,
+                isUpdating: true,
+                error: ''
+            }
+        case UPDATE_SUCCESS:
+            return {
+                ...state,
+                isUpdating: false,
+                error: '',
+                data: state.data.map(item => {
+                    action.payload.map(item2 => {
+                        if(item.id === item2.id) {
+                            return item = item2
+                        } else {
+                            return item
+                        }
+                    })
+                    return item
+                })
+            }
+        case UPDATE_FAILURE:
+            return {
+                ...state,
+                isUpdating: false,
+                error: action.payload
+            }
+        case START_DELETION:
+            return {
+                ...state,
+                isDeleting: true,
+                error: ''
+            }
+        case DELETION_SUCCESS:
+            return {
+                ...state,
+                isDeleting: false,
+                error: '',
+                data: action.payload.map(item => item)
+            }
+        case DELETION_FAILURE:
+            return {
+                ...state,
+                isDeleting: false,
                 error: action.payload
             }
         default:

@@ -27,7 +27,7 @@ class Login extends Component {
             .then(res => {
                 console.log(res)
                 localStorage.setItem('token', res.data.payload)
-                this.props.history.push('/tracker')
+                this.props.history.push('/trackerlist')
             })
             .catch(err => console.log(err))
         
