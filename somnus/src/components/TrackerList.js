@@ -13,6 +13,11 @@ const TrackerList = (props) => {
         props.history.push(`/trackerlist/${item.id}`)
     }
 
+    if(!props.data) {
+        return <Loader type="Rings" color="#00BFFF" height={100} width={100} /> 
+    }
+
+    console.log(props.data)
     return (
         <div>
             <p>
@@ -26,7 +31,7 @@ const TrackerList = (props) => {
                 : ''}
             </p>
             {props.data.map(item => (
-                <div key={item.id} onClick={e => entryRoute(e, item)}>
+                <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
                     <p>{item.date}</p>
                     <p>{item.feels}</p>
                     <p>{item.notes}</p>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
 
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { fetchData } from '../actions'
+import { updateData } from '../actions'
 
 const initialEntry = {
     date: '',
@@ -44,10 +44,8 @@ const UpdateEntry = props => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axiosWithAuth()
-            .put(`/api/data/${entry.id}`, entry)
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err))
+        props.updateData(entry)
+        props.history.push('/trackerlist')
     }
 
     return (
@@ -106,6 +104,6 @@ const mapStatetoProps = state => {
 
 export default connect(
     mapStatetoProps,
-    { fetchData }
+    { updateData }
 )(UpdateEntry)
 

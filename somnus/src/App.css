@@ -88,3 +88,8 @@
   border-bottom: 4px solid #000;
 
 }
+
+.entry {
+  border: 2px solid black;
+  margin: 1rem;
+}
