@@ -1,10 +1,12 @@
-import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, START_POSTING, POST_SUCCESS, POST_FAILURE, START_UPDATING, UPDATE_SUCCESS, UPDATE_FAILURE } from '../actions';
+import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, START_POSTING, POST_SUCCESS, POST_FAILURE, START_UPDATING, UPDATE_SUCCESS, UPDATE_FAILURE, START_DELETION, DELETION_SUCCESS, DELETION_FAILURE } from '../actions';
+import { isTerminatorless } from '@babel/types';
 
 const initialState = {
     data: [],
     isFetching: false,
     isPosting: false,
     isUpdating: false,
+    isDeleting: false,
     error: ''
 }
 
@@ -77,6 +79,25 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isUpdating: false,
+                error: action.payload
+            }
+        case START_DELETION:
+            return {
+                ...state,
+                isDeleting: true,
+                error: ''
+            }
+        case DELETION_SUCCESS:
+            return {
+                ...state,
+                isDeleting: false,
+                error: '',
+                data: action.payload.map(item => item)
+            }
+        case DELETION_FAILURE:
+            return {
+                ...state,
+                isDeleting: false,
                 error: action.payload
             }
         default:

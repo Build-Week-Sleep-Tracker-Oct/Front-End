@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
 
+import { deleteData } from '../actions'
+
 const TrackedData = props => {
     const sleepItem = props.data.find(
         item => `${item.id}` === props.match.params.id
@@ -20,7 +22,7 @@ const TrackedData = props => {
                 <p>{sleepItem.timeFrom}</p>
                 <p>{sleepItem.timeTo}</p>
                 <button onClick={() => props.history.push(`/edit-tracker/${sleepItem.id}`)}>Edit</button>
-                <button>Delete</button>
+                <button onClick={() => {props.deleteData(sleepItem); props.history.push('/trackerlist')}}>Delete</button>
             </div>
         </>
     )
@@ -38,7 +40,7 @@ const mapStatetoProps = state => {
 
 export default connect(
     mapStatetoProps,
-    {  }
+    { deleteData }
 )(TrackedData)
 
 // {Date(props.item.date).slice(0, 24)}

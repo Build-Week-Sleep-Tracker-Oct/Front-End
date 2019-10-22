@@ -43,3 +43,19 @@ export const updateData = item => dispatch => {
             .catch(err => dispatch({ type: UPDATE_FAILURE, payload: err
             }))
 }
+
+export const START_DELETION = 'START_DELETION'
+export const DELETION_SUCCESS = 'DELETION_SUCCESS'
+export const DELETION_FAILURE = 'DELETION_FAILER'
+export const deleteData = item => dispatch => {
+    dispatch({ type: START_DELETION })
+        axiosWithAuth()
+            .delete(`/api/data/${item.id}`, item)
+            .then(res => (
+                console.log(res.data),
+                dispatch({ type: DELETION_SUCCESS, payload: res.data
+                })
+            ))
+            .catch(err => dispatch({ type: DELETION_FAILURE, payload: err
+            }))
+}
