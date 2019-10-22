@@ -39,6 +39,7 @@ const TrackerList = (props) => {
                     <p>{item.timeTo}</p>
                 </div>
             ))}
+            <button className='addEntryButton' onClick={() => props.history.push('/sleepentry')}>Add Entry</button>
         </div>
     )
 }
