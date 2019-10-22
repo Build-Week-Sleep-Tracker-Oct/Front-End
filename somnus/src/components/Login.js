@@ -23,10 +23,10 @@ class Login extends Component {
     handleSubmit = e => {
         e.preventDefault()
         axiosWithAuth()
-            .post('/api/login', this.state.credentials)
+            .post('/api/auth/login', this.state.credentials)
             .then(res => {
                 console.log(res)
-                localStorage.setItem('token', res.data.payload)
+                localStorage.setItem('token', res.data.token)
                 this.props.history.push('/trackerlist')
             })
             .catch(err => console.log(err))

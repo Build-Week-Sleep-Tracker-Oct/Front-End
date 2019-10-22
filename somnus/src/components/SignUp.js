@@ -22,7 +22,7 @@ class SignUp extends Component {
     handleSubmit = e => {
         e.preventDefault()
         axios
-            .post('https://reqres.in/api/users/', this.state.credentials)
+            .post('https://sleep-tracker-bw.herokuapp.com/api/auth/register', this.state.credentials)
             .then(res => console.log(res))
             .catch(err => console.log(err))
 
