@@ -104,3 +104,20 @@
 .addEntryButton {
   font-size: 2rem;
 }
+
+.sleep-entry {  
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: 100vh;
+    font-size: 1.8rem;
+    background-image: url('./assets/Somnus_Splash_Page.svg');
+    background-repeat: no-repeat;
+    background-size: 150%;  
+}
+.sleep-entry h1 {
+  color: white;
+  text-align: left;
+  font-size: 1.5rem;
+  margin-left: 2%;
+}
