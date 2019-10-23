@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Line } from 'react-chartjs-2'
 import Moment from 'react-moment'
 
-import Alarm from './Alarm'
+
 
 const Chart = props => {
 
@@ -100,7 +100,6 @@ const Chart = props => {
             height={30} 
             options={options}
             data={data} />
-            <Alarm />
         </div>
     )
 }
