@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Line } from 'react-chartjs-2'
-import Moment from 'react-moment';
+import Moment from 'react-moment'
+
+import Alarm from './Alarm'
 
 const Chart = props => {
 
@@ -45,16 +46,23 @@ const Chart = props => {
         }
         
         let newArray3 = newArray2.map(item => {
-          return item + 24
+          if(item > 0) {
+            return item
+          } else {
+            return item + 24
+          }
         })
+
         
         return newArray3.filter(item => Number.isInteger(item))
       }
 
     let nightlyData = compare(sleepFrom, sleepTo)
 
+  
+
     const data = {
-        labels: ['1', '2', '3', '4', '5', '6'],
+        labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
         datasets: [{
                 label: 'Time Slept',
                 borderColor: 'purple',
@@ -92,6 +100,7 @@ const Chart = props => {
             height={30} 
             options={options}
             data={data} />
+            <Alarm />
         </div>
     )
 }
