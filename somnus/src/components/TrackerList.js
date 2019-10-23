@@ -51,10 +51,10 @@ const TrackerList = (props) => {
                 /> 
                 : ''}
             <p className='avgFeel'>{feelAvg === 4 ? 'Your average sleep is 😀' : ''}</p>
-            <p className='avgFeel'>{feelAvg > 3 && feelAvg < 4 ? 'Your average sleep is 😐' : ''}</p>
-            <p className='avgFeel'>{feelAvg > 2 && feelAvg < 3 ? 'Your average sleep is 😭' : ''}</p>
+            <p className='avgFeel'>{feelAvg >= 3 && feelAvg < 4 ? 'Your average sleep is 😐' : ''}</p>
+            <p className='avgFeel'>{feelAvg >= 2 && feelAvg < 3 ? 'Your average sleep is 😭' : ''}</p>
             <p className='avgFeel'>{feelAvg >= 1 && feelAvg < 2 ? 'Your average sleep is 😡' : ''}</p>
-            <Route component={Search} />
+            <Route render={() => <Search {...props} data={props.data} />} />
             {/* {props.data.map(item => {
                 if(Number(item.feels) === 1){
                     return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
