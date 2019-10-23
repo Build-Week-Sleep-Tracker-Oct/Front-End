@@ -25,6 +25,7 @@ class SignUp extends Component {
             .post('https://sleep-tracker-bw.herokuapp.com/api/auth/register', this.state.credentials)
             .then(res => console.log(res))
             .catch(err => console.log(err))
+        this.props.history.push('/trackerlist')
 
     }
 

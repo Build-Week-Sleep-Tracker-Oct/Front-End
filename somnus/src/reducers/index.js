@@ -64,15 +64,24 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 isUpdating: false,
                 error: '',
-                data: state.data.map(item => {
-                    action.payload.map(item2 => {
-                        if(item.id === item2.id) {
-                            return item = item2
-                        } else {
-                            return item
-                        }
-                    })
-                    return item
+                data: 
+                // state.data.map(item => {
+                //     action.payload.map(item2 => {
+                //         if(item.id === item2.id) {
+                //             return item = item2
+                //         } else {
+                //             return item
+                //         }
+                //     })
+                //     return item
+                // })
+
+                state.data.map(item => {
+                    if(item.id === action.payload.id) {
+                        return item = action.payload
+                    } else {
+                        return item
+                    }
                 })
             }
         case UPDATE_FAILURE:
