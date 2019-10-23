@@ -6,6 +6,7 @@ import { fetchData } from '../actions'
 import Chart from './Chart'
 import Search from "./Search";
 import {Route} from "react-router-dom";
+import Alarm from './Alarm'
 
 
 
@@ -40,6 +41,7 @@ const TrackerList = (props) => {
     return (
         <div>
             <Chart />
+            <Alarm />
                 {props.isFetching ? 
                 <Loader
                     type="Rings"

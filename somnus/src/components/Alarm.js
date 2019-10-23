@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment';
 import UIfx from 'uifx'
+import { useAsync } from 'react-async'
 
 import alarm from '../assets/alarm.wav'
 
@@ -19,17 +20,15 @@ const Alarm = () => {
     }
 
     const tick = () => {
-        setAlarmSound(moment().format('MMMM DD YYYY h:mm:ss a'))
+        setInterval(() => {
+            setAlarmSound(moment().format('MMMM DD YYYY h:mm:ss a'))
+        }, 1000)
     }
+
 
     useEffect(() => {
         tick()
-        return function cleanup() {
-            tick()
-        }
-    }, [setInterval(() => {
-        tick()
-    }, 1000)])
+    }, [alarmSound])
 
     const alarmCall = () => {
         if(alarmSound === moment(alarm).format('MMMM DD YYYY h:mm:ss a')){
