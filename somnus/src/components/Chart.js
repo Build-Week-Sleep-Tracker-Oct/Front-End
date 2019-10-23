@@ -16,7 +16,9 @@ const Chart = props => {
         return new Date(item.dateTimeTo).getHours()
     })
 
-    console.log(sleepFrom, sleepTo)
+    let feelingNumber = props.data.map(item => {
+      return Number(item.feels) * 3
+    })
 
     function compare(arr1, arr2){
         let newArray = []
@@ -57,6 +59,10 @@ const Chart = props => {
                 label: 'Time Slept',
                 borderColor: 'purple',
                 data: nightlyData
+            },{
+                label: 'Feels',
+                borderColor: 'black',
+                data: feelingNumber
             }]
     }
 
