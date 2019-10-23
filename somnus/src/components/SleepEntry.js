@@ -18,16 +18,17 @@ const SleepFormLabel = styled.label`
 
 const TimeInput = styled.input`
   margin: 4% 0;
-  width: 50%;
+  width: 90%;
 `;
 
 const MoodInput = styled.select`
   margin: 4% 0;
-  width: 60%;
+  width: 90%;
 `;
 
 const NoteInput = styled.textarea`
   margin: 4% 0;
+  width: 95%;
 `;
 
 const SubmitButton = styled.button`
@@ -37,6 +38,7 @@ const SubmitButton = styled.button`
   padding: 2%;
   font-size: 18px;
   border: none;
+  width: 50%;
 `;
 
 const SleepEntry = props => {
