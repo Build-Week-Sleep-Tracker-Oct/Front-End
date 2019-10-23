@@ -4,6 +4,7 @@ import Loader from 'react-loader-spinner'
 
 import { fetchData } from '../actions'
 import Chart from './Chart'
+import Search from "./Search";
 
 
 
@@ -57,7 +58,8 @@ const TrackerList = (props) => {
             <p className='avgFeel'>{feelAvg > 3 && feelAvg < 4 ? 'Your average sleep is 😐' : ''}</p>
             <p className='avgFeel'>{feelAvg > 2 && feelAvg < 3 ? 'Your average sleep is 😭' : ''}</p>
             <p className='avgFeel'>{feelAvg >= 1 && feelAvg < 2 ? 'Your average sleep is 😡' : ''}</p>
-            {props.data.map(item => {
+            <Search />
+            {/* {props.data.map(item => {
                 if(Number(item.feels) === 1){
                     return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
                                 <p>😡</p>
@@ -95,8 +97,9 @@ const TrackerList = (props) => {
                             </div>
 
                 }
-            })}
+            })} */}
             <button className='addEntryButton' onClick={() => props.history.push('/sleepentry')}>Add Entry</button>
+            
         </div>
     )
 }
