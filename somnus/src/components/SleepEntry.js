@@ -108,6 +108,7 @@ const SleepEntry = props => {
 
           <SubmitButton type="submit">Submit</SubmitButton>
 
+
           <NavLink
             to={"/trackerlist"}
             style={{
@@ -124,6 +125,7 @@ const SleepEntry = props => {
     </div>
   );
 };
+
 
 const mapStatetoProps = state => {
   return {
