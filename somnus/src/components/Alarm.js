@@ -14,20 +14,27 @@ const myAlarm = new UIfx (
 const Alarm = () => {
     const [alarm, setAlarm] = useState('')
     const [alarmSound, setAlarmSound] = useState()
+    const [intervalState, setIntervalState] = useState()
 
     const changeHandler = e => {
         setAlarm(`${e.target.value}`)
     }
 
     const tick = () => {
-        setInterval(() => {
-            setAlarmSound(moment().format('MMMM DD YYYY h:mm:ss a'))
-        }, 1000)
+        
     }
 
 
     useEffect(() => {
-        tick()
+        // tick()
+        
+        const interval = setInterval(() => {
+            setAlarmSound(moment().format('MMMM DD YYYY h:mm:ss a'))
+        }, 1000)
+        return function(){
+            clearInterval(interval)
+        }
+        
     }, [alarmSound])
 
     const alarmCall = () => {
