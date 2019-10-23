@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-const Search = () => {
+const Search = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [start, setStart] = useState([]);
@@ -25,6 +25,11 @@ const Search = () => {
     setSearchTerm(event.target.value);
   };
 
+  const entryRoute = (e, item) => {
+    e.preventDefault()
+    props.history.push(`/trackerlist/${item.id}`)
+}
+
   return (
     <section className="search-form">
       <form className="search">
@@ -45,7 +50,7 @@ const Search = () => {
         ? start.map(item => {
             if (Number(item.feels) === 1) {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>😡</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>
@@ -54,7 +59,7 @@ const Search = () => {
               );
             } else if (Number(item.feels) === 2) {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>😭</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>
@@ -63,7 +68,7 @@ const Search = () => {
               );
             } else if (Number(item.feels) === 3) {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>😐</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>
@@ -72,7 +77,7 @@ const Search = () => {
               );
             } else if (Number(item.feels) === 4) {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>😀</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>
@@ -81,7 +86,7 @@ const Search = () => {
               );
             } else {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>{item.feels}</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>
@@ -93,7 +98,7 @@ const Search = () => {
         : searchResults.map(item => {
             if (Number(item.feels) === 1) {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>😡</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>
@@ -102,7 +107,7 @@ const Search = () => {
               );
             } else if (Number(item.feels) === 2) {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>😭</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>
@@ -111,7 +116,7 @@ const Search = () => {
               );
             } else if (Number(item.feels) === 3) {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>😐</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>
@@ -120,7 +125,7 @@ const Search = () => {
               );
             } else if (Number(item.feels) === 4) {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>😀</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>
@@ -129,7 +134,7 @@ const Search = () => {
               );
             } else {
               return (
-                <div className="entry" key={item.id}>
+                <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
                   <p>{item.feels}</p>
                   <p>{item.notes}</p>
                   <p>{item.dateTimeFrom}</p>

@@ -5,15 +5,11 @@ import Loader from 'react-loader-spinner'
 import { fetchData } from '../actions'
 import Chart from './Chart'
 import Search from "./Search";
+import {Route} from "react-router-dom";
 
 
 
 const TrackerList = (props) => {
-
-    const entryRoute = (e, item) => {
-        e.preventDefault()
-        props.history.push(`/trackerlist/${item.id}`)
-    }
 
     if(!props.data) {
         return <Loader type="Rings" color="#00BFFF" height={100} width={100} /> 
@@ -56,7 +52,7 @@ const TrackerList = (props) => {
             <p className='avgFeel'>{feelAvg > 3 && feelAvg < 4 ? 'Your average sleep is 😐' : ''}</p>
             <p className='avgFeel'>{feelAvg > 2 && feelAvg < 3 ? 'Your average sleep is 😭' : ''}</p>
             <p className='avgFeel'>{feelAvg >= 1 && feelAvg < 2 ? 'Your average sleep is 😡' : ''}</p>
-            <Search />
+            <Route component={Search} />
             {/* {props.data.map(item => {
                 if(Number(item.feels) === 1){
                     return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
