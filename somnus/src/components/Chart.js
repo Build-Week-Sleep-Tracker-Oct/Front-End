@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Line } from 'react-chartjs-2'
-import Moment from 'react-moment';
+import Moment from 'react-moment'
+
+
 
 const Chart = props => {
 
-    console.log(props.data)
+    
     let sleepFrom = props.data.map(item => {
         // return item.dateTimeFrom
         return new Date(item.dateTimeFrom).getHours()
@@ -14,6 +15,10 @@ const Chart = props => {
 
     let sleepTo = props.data.map(item => {
         return new Date(item.dateTimeTo).getHours()
+    })
+
+    let feelingNumber = props.data.map(item => {
+      return Number(item.feels) * 3
     })
 
     function compare(arr1, arr2){
@@ -41,35 +46,59 @@ const Chart = props => {
         }
         
         let newArray3 = newArray2.map(item => {
-          return item + 24
+          if(item > 0) {
+            return item
+          } else {
+            return item + 24
+          }
         })
+
         
         return newArray3.filter(item => Number.isInteger(item))
       }
 
     let nightlyData = compare(sleepFrom, sleepTo)
 
+  
+
     const data = {
-        labels: ['1', '2', '3', '4', '5', '6'],
-        xAxisID: ['Hours Slept'],
-        yAxisID: ['Day of the Month'],
-        datasets: [
-            {
+        labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
+        datasets: [{
                 label: 'Time Slept',
                 borderColor: 'purple',
                 data: nightlyData
-            },
-            // {
-            //     label: '',
-            //     // backgroundColor: 'purple',
-            //     data: [12, 18, 10, 3]
-            // }
-        ]
+            },{
+                label: 'Feels',
+                borderColor: 'black',
+                data: feelingNumber
+            }]
+    }
+
+    const options = {
+      scales: {
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Hours Slept'
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Entry Number'
+          }
+        }]
+      }
     }
     return (
         <div className='chart'>
-            <Line 
-            // options={{ maintainAspectRatio: false }}
+            <Line
+            width={100}
+            height={30} 
+            options={options}
             data={data} />
         </div>
     )

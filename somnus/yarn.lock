@@ -8208,6 +8208,11 @@ react-app-polyfill@^1.0.4:
     regenerator-runtime "0.13.3"
     whatwg-fetch "3.0.0"
 
+react-async@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/react-async/-/react-async-9.0.0.tgz#60e8282278fc642429229a33ce1dbd427d6470e3"
+  integrity sha512-J1o8clttyaQ12+G2GiRTgsvkD+QZJS9A9GTh3nDWX6gvoskmUwMPXFDntOcUvP032xUAf6F75M2sT3FW095HeA==
+
 react-chartjs-2@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-2.8.0.tgz#1c24de91fb3755f8c4302675de7d66fdda339759"
@@ -9833,6 +9838,11 @@ uglify-js@^3.1.4:
   dependencies:
     commander "~2.20.0"
     source-map "~0.6.1"
+
+uifx@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/uifx/-/uifx-2.0.3.tgz#2cae3b2d7e182b7bfbc46e719dc1c559bd5912f3"
+  integrity sha512-Y4o8DbiM3tzGmnTlU21WO7mDNVcsBZ8oONCRMt9L3Hgd7VihxH7oE5CTKUBpby8mn05dF4OGGA9UKUq1EGUAQA==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
