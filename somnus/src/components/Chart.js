@@ -6,7 +6,7 @@ import Moment from 'react-moment';
 
 const Chart = props => {
 
-    console.log(props.data)
+    
     let sleepFrom = props.data.map(item => {
         // return item.dateTimeFrom
         return new Date(item.dateTimeFrom).getHours()
@@ -15,6 +15,8 @@ const Chart = props => {
     let sleepTo = props.data.map(item => {
         return new Date(item.dateTimeTo).getHours()
     })
+
+    console.log(sleepFrom, sleepTo)
 
     function compare(arr1, arr2){
         let newArray = []
