@@ -4,6 +4,7 @@ import Loader from 'react-loader-spinner'
 
 import { fetchData } from '../actions'
 import Chart from './Chart'
+import Search from "./Search";
 
 
 
@@ -97,6 +98,7 @@ const TrackerList = (props) => {
                 }
             })}
             <button className='addEntryButton' onClick={() => props.history.push('/sleepentry')}>Add Entry</button>
+            <Search />
         </div>
     )
 }
