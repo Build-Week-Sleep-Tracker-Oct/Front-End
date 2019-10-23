@@ -53,25 +53,38 @@ const Chart = props => {
 
     const data = {
         labels: ['1', '2', '3', '4', '5', '6'],
-        xAxisID: ['Hours Slept'],
-        yAxisID: ['Day of the Month'],
-        datasets: [
-            {
+        datasets: [{
                 label: 'Time Slept',
                 borderColor: 'purple',
                 data: nightlyData
-            },
-            // {
-            //     label: '',
-            //     // backgroundColor: 'purple',
-            //     data: [12, 18, 10, 3]
-            // }
-        ]
+            }]
+    }
+
+    const options = {
+      scales: {
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Hours Slept'
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Entry Number'
+          }
+        }]
+      }
     }
     return (
         <div className='chart'>
-            <Line 
-            // options={{ maintainAspectRatio: false }}
+            <Line
+            width={100}
+            height={30} 
+            options={options}
             data={data} />
         </div>
     )

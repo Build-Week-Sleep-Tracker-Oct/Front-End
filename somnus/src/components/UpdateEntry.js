@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
-
-import { axiosWithAuth } from '../utils/axiosWithAuth'
 import { updateData } from '../actions'
 
 const initialEntry = {
-    // date: '',
-    // timeFrom: '',
-    // timeTo: '',
-    // feels: '',
-    // notes: ''
     dateTimeFrom: '',
     dateTimeTo: '',
     feels: '',

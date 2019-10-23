@@ -45,5 +45,3 @@ export default connect(
     mapStatetoProps,
     { deleteData }
 )(TrackedData)
-
-// {Date(props.item.date).slice(0, 24)}
