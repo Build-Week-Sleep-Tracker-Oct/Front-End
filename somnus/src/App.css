@@ -113,7 +113,8 @@
     font-size: 1.8rem;
     background-image: url('./assets/Somnus_Splash_Page.svg');
     background-repeat: no-repeat;
-    background-size: 150%;  
+    background-size: 100%;
+    align-items: center;  
 }
 .sleep-entry h1 {
   color: white;
@@ -189,6 +190,7 @@
 
 /* Styling of overlay */
 .bm-overlay {
+  display: none;
   background: rgba(0, 0, 0, 0.3);
 }
 
