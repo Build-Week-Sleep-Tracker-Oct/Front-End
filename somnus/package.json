@@ -9,6 +9,7 @@
     "moment": "^2.24.0",
     "react": "^16.10.2",
     "react-async": "^9.0.0",
+    "react-burger-menu": "^2.6.11",
     "react-chartjs": "^1.2.0",
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.10.2",
