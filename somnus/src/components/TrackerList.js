@@ -44,7 +44,6 @@ const TrackerList = (props) => {
     return (
         <div>
             <Chart />
-            <p>
                 {props.isFetching ? 
                 <Loader
                     type="Rings"
@@ -53,7 +52,6 @@ const TrackerList = (props) => {
                     width={100}
                 /> 
                 : ''}
-            </p>
             <p className='avgFeel'>{feelAvg === 4 ? 'Your average sleep is 😀' : ''}</p>
             <p className='avgFeel'>{feelAvg > 3 && feelAvg < 4 ? 'Your average sleep is 😐' : ''}</p>
             <p className='avgFeel'>{feelAvg > 2 && feelAvg < 3 ? 'Your average sleep is 😭' : ''}</p>

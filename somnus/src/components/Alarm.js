@@ -24,6 +24,9 @@ const Alarm = () => {
 
     useEffect(() => {
         tick()
+        return function cleanup() {
+            tick()
+        }
     }, [setInterval(() => {
         tick()
     }, 1000)])
@@ -39,8 +42,10 @@ const Alarm = () => {
     console.log(moment(alarm).format('MMMM DD YYYY h:mm:ss a'))
     return (
         <div>
+            <p>Alarm</p>
             <input name="alarm" id="alarm" type="datetime-local" 
             onChange={changeHandler} />
+
             <p>
                 {!alarm ? 'Alarm is not set' : 
                 <>Alarm is set for {moment(alarm).format('MM/DD/YYYY HH:MM a')}</>
