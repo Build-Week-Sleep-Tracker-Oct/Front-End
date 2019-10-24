@@ -3,7 +3,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Loader from 'react-loader-spinner';
 
 const Search = props => {
-	console.log(props.data);
+	//console.log(props.data);
 	const [searchTerm, setSearchTerm] = useState('');
 	const [searchResults, setSearchResults] = useState([]);
 	const [start, setStart] = useState([]);
