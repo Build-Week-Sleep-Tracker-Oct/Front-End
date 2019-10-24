@@ -152,6 +152,18 @@
   margin-left: 2%;
 }
 
+.menuImg {
+  background-image: url('./assets/Hamburger.png');
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+}
+
 .update-entry {
     display: flex;
     flex-direction: column;
@@ -233,6 +245,7 @@
   height: 30px;
   right: 25px;
   top: 20px;
+  opacity: 0;
 }
 
 /* Color/shape of burger icon bars */

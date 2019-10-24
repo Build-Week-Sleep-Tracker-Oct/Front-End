@@ -32,7 +32,7 @@ const Search = props => {
     props.history.push(`/trackerlist/${item.id}`);
   };
 
-  if (!props.data) {
+  if (!searchResults) {
     return <Loader type="Rings" color="#00BFFF" height={100} width={100} />;
   }
 

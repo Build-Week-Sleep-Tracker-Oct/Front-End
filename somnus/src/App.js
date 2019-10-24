@@ -13,6 +13,7 @@ import SleepEntry from './components/SleepEntry';
 import TrackedData from './components/TrackedData';
 import UpdateEntry from './components/UpdateEntry';
 import Search from "./components/Search";
+import SideBar from "./components/sidebar";
 
 const App = (props) => {
   useEffect(() => {
@@ -24,6 +25,10 @@ const App = (props) => {
   return (
     <Router>
       <div className="App">
+        <nav>
+        <div className="menuImg"></div>
+      <SideBar pageWrapId={"page-wrap"} outerContainerId={"sleep-entry"} />
+        </nav>
         <Switch>
           <PrivateRoute exact path='/trackerlist' component={TrackerList} />
           <PrivateRoute exact path='/sleepentry' component={SleepEntry} />
