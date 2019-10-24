@@ -7,6 +7,7 @@
   font-family: azo-sans-web, sans-serif;
   font-weight: 700;
   font-style: normal;
+  position: relative;
 }
 
 /* .App-logo {
@@ -142,6 +143,7 @@
   height: 100px;
   width: 200px;
   position: absolute;
+  z-index: 2;
   right: 160px;
   margin-top: 2rem;
 }
@@ -174,6 +176,9 @@
   border: 10px solid white;
   margin: 1rem;
   background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+}
+
+.individaulEntry {
 }
 
 .addEntryButton {
