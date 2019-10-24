@@ -35,7 +35,7 @@ class Login extends Component {
     render() {
         return (
             <div className='login'>
-                <p>Somnus</p>
+                <div className='logo'></div>
 
                 <form onSubmit={this.handleSubmit}>
                     <input 
