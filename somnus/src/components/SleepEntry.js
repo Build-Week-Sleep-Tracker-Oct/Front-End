@@ -62,6 +62,11 @@ const SleepEntry = props => {
     //addNewEntry
   };
 
+  const smiley = <span role="img" aria-labelledby='smiley'>:grinning:</span>
+ const ok = <span role="img" aria-labelledby='ok'>:neutral_face:</span>
+ const sad = <span role="img" aria-labelledby='sad'>:sob:</span>
+ const angry = <span role="img" aria-labelledby='angry'>:rage:</span>
+
   return (
     <div className="sleep-entry">
         <SleepForm onSubmit={submitEntry}>
@@ -90,10 +95,10 @@ const SleepEntry = props => {
             value={entry.feels}
           >
             <option value="">Please choose how you feel</option>
-            <option value="4">😀</option>
-            <option value="3">😐</option>
-            <option value="2">😭</option>
-            <option value="1">😡</option>
+            <option value="4">{smiley}</option>
+            <option value="3">{ok}</option>
+            <option value="2">{sad}</option>
+            <option value="1">{angry}</option>
           </MoodInput>
 
           <SleepFormLabel htmlFor="notes">notes</SleepFormLabel>
