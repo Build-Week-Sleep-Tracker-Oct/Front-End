@@ -52,7 +52,7 @@ export const deleteData = item => dispatch => {
         axiosWithAuth()
             .delete(`/api/user/sleepdata/${item.id}`, item)
             .then(res => (
-                console.log(res.data),
+                console.log(res),
                 dispatch({ type: DELETION_SUCCESS, payload: res.data
                 })
             ))

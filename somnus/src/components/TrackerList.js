@@ -16,6 +16,11 @@ const TrackerList = (props) => {
         return <Loader type="Rings" color="#00BFFF" height={100} width={100} /> 
     }
 
+    const entryRoute = (e, item) => {
+        e.preventDefault()
+        props.history.push(`/trackerlist/${item.id}`)
+    }
+    
     let feelToNum = props.data.map((item) => {
         return Number(item.feels)
     })
@@ -55,7 +60,7 @@ const TrackerList = (props) => {
             <p className='avgFeel'>{feelAvg >= 2 && feelAvg < 3 ? 'Your average sleep is 😭' : ''}</p>
             <p className='avgFeel'>{feelAvg >= 1 && feelAvg < 2 ? 'Your average sleep is 😡' : ''}</p>
             <Route render={() => <Search {...props} data={props.data} />} />
-            {/* {props.data.map(item => {
+            {props.data.map(item => {
                 if(Number(item.feels) === 1){
                     return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
                                 <p>😡</p>
@@ -93,7 +98,7 @@ const TrackerList = (props) => {
                             </div>
 
                 }
-            })} */}
+            })}
             <button className='addEntryButton' onClick={() => props.history.push('/sleepentry')}>Add Entry</button>
             
         </div>

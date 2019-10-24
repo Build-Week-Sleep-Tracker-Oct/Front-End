@@ -17,7 +17,7 @@ const Alarm = () => {
     const [intervalState, setIntervalState] = useState()
 
     const changeHandler = e => {
-        setAlarm(`${e.target.value}`)
+        setAlarm(e.target.value)
     }
 
     const tick = () => {
@@ -44,7 +44,7 @@ const Alarm = () => {
     }
     
 
-    // console.log(alarmSound)
+    // console.log(alarm)
     // console.log(moment(alarm).format('MMMM DD YYYY h:mm:ss a'))
     return (
         <div>
@@ -54,7 +54,7 @@ const Alarm = () => {
 
             <p>
                 {!alarm ? 'Alarm is not set' : 
-                <>Alarm is set for {moment(alarm).format('MM/DD/YYYY HH:MM a')}</>
+                <>Alarm is set for {moment(alarm).format('MMMM DD YYYY h:mm a')}</>
                 }
                 
             </p>

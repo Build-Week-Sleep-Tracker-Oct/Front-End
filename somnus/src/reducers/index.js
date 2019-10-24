@@ -12,6 +12,7 @@ const initialState = {
 
 
 const reducer = (state = initialState, action) => {
+    // console.log(state)
     switch(action.type) {
         case START_FETCHING:
             return {
