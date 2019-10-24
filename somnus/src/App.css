@@ -34,6 +34,7 @@
   background-image: url('./assets/Somnus_Splash_Page.svg');
   background-repeat: no-repeat;
   background-size: 150%;
+  color: white;
 }
 
 .login form {
@@ -99,6 +100,16 @@
 	width: 50%;
 }
 
+.login .logo {
+  background-image: url('./assets/Somnus.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 200px;
+  position: absolute;
+  right: 175px;
+  margin-top: 2rem;
+}
 
 .login input[type=text] {
   border: none;
@@ -120,10 +131,13 @@
   background: transparent;
 }
 
+.login input::placeholder {
+  color: white;
+}
+
 .entry {
   border: 2px solid black;
   margin: 1rem;
-  color: white;
   background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
 }
 
