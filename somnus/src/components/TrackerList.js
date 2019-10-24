@@ -13,9 +13,9 @@ const TrackerList = props => {
 		return <Loader type='Rings' color='#00BFFF' height={100} width={100} />;
 	}
 
-	let feelToNum = props.data.map(item => {
-		return Number(item.feels);
-	});
+    let feelToNum = props.data.map((item) => {
+        return Number(item.feels)
+    })
 
 	let feelAvg = feelToNum.reduce((item, acc) => item + acc, 0);
 
@@ -25,12 +25,7 @@ const TrackerList = props => {
         e.preventDefault()
         props.history.push(`/trackerlist/${item.id}`)
     }
-    
-    
-
 	console.log(feelAvg, props.data);
-
-    feelAvg = feelAvg / props.data.length
 
     // if(feelAvg === 4){
     //     return feelAvg = '😀'

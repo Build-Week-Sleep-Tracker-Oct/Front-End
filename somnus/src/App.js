@@ -32,7 +32,7 @@ const App = (props) => {
           <Route path='/edit-tracker/:id' render={props => (
             <UpdateEntry {...props} updateData={props.data} />
           )} />
-          <Route path="/search" render={() => <Search {...props} data={props.data} />} />
+          <Route path="/search" component={Search} />
           <Route exact path='/' component={Login} />
           <Route exact path='/signup' component={SignUp} />
         </Switch>
