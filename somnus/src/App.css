@@ -189,6 +189,15 @@
   z-index: 2;
 }
 
+.socialIcons {
+  background-image: url('./assets/Social_Media_Icons.png');
+  width: 50%;
+  height: 20%;  
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 23%;
+}
+
 .update-entry {
     display: flex;
     flex-direction: column;
