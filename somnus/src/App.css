@@ -54,10 +54,10 @@
   font-size: 2rem;
   background: #ffba08;
 	border-radius: 5px;
-	margin: 10% 20%;
+	margin: 10% 15% 10% 25%;
 	padding: 2%;
 	border: none;
-	width: 50%;
+  width: 50%;
 }
 
 .loginButton a {
