@@ -16,7 +16,7 @@ const TrackerList = props => {
     let feelToNum = props.data.map((item) => {
         return Number(item.feels)
     })
-    
+
 	let feelAvg = feelToNum.reduce((item, acc) => item + acc, 0);
 
 	feelAvg = feelAvg / props.data.length;
@@ -25,15 +25,7 @@ const TrackerList = props => {
         e.preventDefault()
         props.history.push(`/trackerlist/${item.id}`)
     }
-    
-<<<<<<< HEAD
-   
-=======
-    
->>>>>>> 69fb04b0dfbbb2216743775b9870696f07de3579
-
 	console.log(feelAvg, props.data);
-
     feelAvg = feelAvg / props.data.length
 
     // if(feelAvg === 4){
