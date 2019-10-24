@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { postData } from "../actions";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import SideBar from "./sidebar";
 
 const SleepForm = styled.form`
   display: flex;

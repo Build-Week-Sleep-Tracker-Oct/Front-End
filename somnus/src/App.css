@@ -179,6 +179,10 @@
 }
 
 .individaulEntry {
+  padding-top: 100px;  
+  background-image: url('./assets/Somnus_Splash_Page.svg');
+  background-repeat: no-repeat;
+  background-size: 150%;
 }
 
 .addEntryButton {
@@ -220,7 +224,7 @@
 }
 
 .tracker-content {
-  margin-top: 100px;
+  padding-top: 100px;
 }
 
 .search {
@@ -263,6 +267,7 @@
   display: flex;
   flex-direction: column;
   margin: 4% 0;
+  margin-top: 100px;
 }
 
 .update-entry input, select, textarea {
