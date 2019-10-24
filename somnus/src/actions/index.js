@@ -6,7 +6,7 @@ export const FETCH_FAILURE = 'FETCH_FAILURE'
 export const fetchData = () => dispatch => {
     dispatch({ type: START_FETCHING })
         axiosWithAuth()
-            .get(`/api/user/sleepdata`)
+            .get(`/api/users/sleepdata`)
             .then(res => dispatch({ type: FETCH_SUCCESS, payload: res.data}))
             .catch(err => dispatch({ type: FETCH_FAILURE, payload: err}))
 }
@@ -17,7 +17,7 @@ export const POST_FAILURE = 'POST_FAILURE'
 export const postData = (item) => dispatch => {
     dispatch({ type: START_POSTING })
         axiosWithAuth()
-            .post(`/api/user/sleepdata`, item)
+            .post(`/api/users/sleepdata`, item)
             .then(res => 
                 dispatch({ 
                     type: POST_SUCCESS, payload: res.data
@@ -34,7 +34,7 @@ export const UPDATE_FAILURE = 'UPDATE_FAILURE'
 export const updateData = item => dispatch => {
     dispatch({ type: START_UPDATING })
         axiosWithAuth()
-            .put(`/api/user/sleepdata/${item.id}`, item)
+            .put(`/api/users/sleepdata/${item.id}`, item)
             .then(res => (
                 console.log(res.data),
                 dispatch({ type: UPDATE_SUCCESS, payload: res.data
@@ -50,7 +50,7 @@ export const DELETION_FAILURE = 'DELETION_FAILER'
 export const deleteData = item => dispatch => {
     dispatch({ type: START_DELETION })
         axiosWithAuth()
-            .delete(`/api/user/sleepdata/${item.id}`, item)
+            .delete(`/api/users/sleepdata/${item.id}`, item)
             .then(res => (
                 console.log(res),
                 dispatch({ type: DELETION_SUCCESS, payload: res.data
