@@ -90,6 +90,37 @@
   outline: none;
 }
 
+.signUp input[type=email] {
+  color: white;
+  border: none;
+  border-bottom: 4px solid #000;
+  opacity: 0.5;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
+}
+
+.signUp input[type=password] {
+  color: white;
+  border: none;
+  border-bottom: 4px solid #000;
+  opacity: 0.5;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
+}
+
+.signUp input[type=text] {
+  color: white;
+  border: none;
+  border-bottom: 4px solid #000;
+  opacity: 0.5;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
+}
+
+.signUp input::placeholder {
+  color: white;
+}
+
 .signUp button {
   font-size: 2rem;
   background: #ffba08;
