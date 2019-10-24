@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import { connect } from 'react-redux'
 
 import { fetchData } from './actions'
@@ -26,7 +26,7 @@ const App = (props) => {
     <Router>
       <div className="App">
         <nav>
-          <div className='somnusLogo'></div>
+          <Link to='/trackerlist'><div className='somnusLogo'></div></Link>
           <div className="menuImg"></div>
           <SideBar pageWrapId={"page-wrap"} outerContainerId={"sleep-entry"} />
         </nav>
