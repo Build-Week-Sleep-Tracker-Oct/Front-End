@@ -27,6 +27,7 @@ const TrackedData = props => {
                 <button className="delete-button" onClick={() => {props.deleteData(sleepItem); props.history.push('/trackerlist')}}>Delete</button>
                 
             </div>
+            <button className="invisible-btn"></button>
         </div>
     )
 }
