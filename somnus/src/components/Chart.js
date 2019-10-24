@@ -65,21 +65,27 @@ const Chart = props => {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
         datasets: [{
                 label: 'Time Slept',
-                borderColor: 'purple',
-                data: nightlyData
+                borderColor: 'white',
+                data: nightlyData,
+                
             },{
                 label: 'Feels',
-                borderColor: 'black',
+                borderColor: 'yellow',
                 data: feelingNumber
             }]
     }
 
     const options = {
+      maintainAspectRation: false,
       scales: {
         yAxes: [{
           scaleLabel: {
             display: true,
             labelString: 'Hours Slept'
+          },
+          gridLines: {
+            display: true,
+            color: "black"
           },
           ticks: {
             beginAtZero: true
@@ -89,15 +95,19 @@ const Chart = props => {
           scaleLabel: {
             display: true,
             labelString: 'Entry Number'
-          }
+          },
+          gridLines: {
+            display: true,
+            color: "black"
+          },
         }]
       }
     }
     return (
         <div className='chart'>
             <Line
-            width={100}
-            height={30} 
+            width={125}
+            height={100} 
             options={options}
             data={data} />
         </div>

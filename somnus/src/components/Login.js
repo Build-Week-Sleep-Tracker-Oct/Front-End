@@ -35,7 +35,6 @@ class Login extends Component {
     render() {
         return (
             <div className='login'>
-                <p>Somnus</p>
 
                 <form onSubmit={this.handleSubmit}>
                     <input 
@@ -60,6 +59,7 @@ class Login extends Component {
                 </button>
 
                 <p>Or Sign Up With:</p>
+                <div className="socialIcons"></div>
 
             </div>
         )

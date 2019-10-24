@@ -43,7 +43,7 @@ const UpdateEntry = props => {
     }
 
     return (
-        <div>
+        <div className="update-entry">
             <form onSubmit={handleSubmit}>
                 <input 
                     name='dateTimeFrom'

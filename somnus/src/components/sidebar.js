@@ -13,7 +13,7 @@ export default props => {
       </a>
 
       <a className="menu-item" href="/sleepentry">
-        Add New Sleep Entry
+        Add New Entry
       </a>
 
       <a className="menu-item" href="/trackerlist">

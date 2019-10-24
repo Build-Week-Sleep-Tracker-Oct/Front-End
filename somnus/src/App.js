@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import { connect } from 'react-redux'
 
@@ -12,6 +12,8 @@ import PrivateRoute from './components/PrivateRoute';
 import SleepEntry from './components/SleepEntry';
 import TrackedData from './components/TrackedData';
 import UpdateEntry from './components/UpdateEntry';
+import Search from "./components/Search";
+import SideBar from "./components/sidebar";
 
 const App = (props) => {
   useEffect(() => {
@@ -23,14 +25,23 @@ const App = (props) => {
   return (
     <Router>
       <div className="App">
+        <nav>
+          <Link to='/trackerlist'><div className='somnusLogo'></div></Link>
+          <div className="menuImg"></div>
+          <SideBar pageWrapId={"page-wrap"} outerContainerId={"sleep-entry"} />
+        </nav>
         <Switch>
           <PrivateRoute exact path='/trackerlist' component={TrackerList} />
           <PrivateRoute exact path='/sleepentry' component={SleepEntry} />
-          <Route path='/trackerlist/:id' render={props => (
-            <TrackedData {...props} /> )} />
+          
+            <Route path='/trackerlist/:id' render={props => (
+              <div className='trackedData'> <TrackedData {...props}  /> </div> )} 
+            /> 
+          
           <Route path='/edit-tracker/:id' render={props => (
             <UpdateEntry {...props} updateData={props.data} />
           )} />
+          <Route path="/search" component={Search} />
           <Route exact path='/' component={Login} />
           <Route exact path='/signup' component={SignUp} />
         </Switch>

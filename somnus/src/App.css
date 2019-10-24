@@ -1,8 +1,13 @@
+/* * {
+  border: 2px solid red;
+} */
+
 .App {
   text-align: center;
   font-family: azo-sans-web, sans-serif;
   font-weight: 700;
   font-style: normal;
+  position: relative;
 }
 
 /* .App-logo {
@@ -34,6 +39,7 @@
   background-image: url('./assets/Somnus_Splash_Page.svg');
   background-repeat: no-repeat;
   background-size: 150%;
+  color: white;
 }
 
 .login form {
@@ -50,16 +56,30 @@
 }
 
 .login button {
-  margin: auto;
-  width: 30%;
-  margin: 1rem auto 1rem auto;
+  font-size: 2rem;
+  background: #ffba08;
+	border-radius: 5px;
+	margin: 10% 15% 10% 25%;
+	padding: 2%;
+	border: none;
+  width: 50%;
+}
+
+.loginButton a {
+  color: black;
+  text-decoration: none;
 }
 
 
 .signUp {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  height: 100vh;
   font-size: 2rem;
+  background-image: url('./assets/Somnus_Splash_Page.svg');
+  background-repeat: no-repeat;
+  background-size: 150%;
 }
 
 .signUp form {
@@ -75,37 +95,162 @@
   outline: none;
 }
 
-.signUp button {
-  margin: auto;
-  width: 30%;
-  margin: 1rem auto 1rem auto;
+.signUp input[type=email] {
+  color: white;
+  border: none;
+  border-bottom: 4px solid #000;
+  opacity: 0.5;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
 }
 
+.signUp input[type=password] {
+  color: white;
+  border: none;
+  border-bottom: 4px solid #000;
+  opacity: 0.5;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
+}
+
+.signUp input[type=text] {
+  color: white;
+  border: none;
+  border-bottom: 4px solid #000;
+  opacity: 0.5;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
+}
+
+.signUp input::placeholder {
+  color: white;
+}
+
+.signUp button {
+  font-size: 2rem;
+  background: #ffba08;
+	border-radius: 5px;
+	margin: 10% 20%;
+	padding: 2%;
+	border: none;
+	width: 50%;
+}
+
+.somnusLogo {
+  background-image: url('./assets/Somnus.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 200px;
+  position: absolute;
+  z-index: 2;
+  right: 160px;
+  margin-top: 2rem;
+}
 
 .login input[type=text] {
   border: none;
   border-bottom: 4px solid #000;
-
-  opacity: 0.2;
-
+  color: white;
+  opacity: 0.5;
+  outline: none;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
+  
 }
 
 .login input[type=password] {
+  color: white;
   border: none;
   border-bottom: 4px solid #000;
-  opacity: 0.2;
+  opacity: 0.5;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
+}
+
+.login input::placeholder {
+  color: white;
 }
 
 .entry {
-  border: 2px solid black;
+  border: 10px solid white;
   margin: 1rem;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+}
+
+.individaulEntry {
+  padding-top: 100px;  
+  /* background-image: url('./assets/Somnus_Splash_Page.svg');
+  background-repeat: no-repeat;
+  background-size: 150%; */
 }
 
 .addEntryButton {
   font-size: 2rem;
+  background: #ffba08;
+	border-radius: 5px;
+	margin: 10% 0;
+	padding: 2%;
+	border: none;
+	width: 50%;
 }
 
-.sleep-entry {  
+.searchButton {
+  font-size: 1.6rem;
+  background: #ffba08;
+	border-radius: 5px;
+	padding: 2%;
+	border: none;
+	width: 50%;
+}
+
+.sleep-entry, .update-entry, .search-form {  
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: 100%;
+    font-size: 1.8rem;
+    background-image: url('./assets/Somnus_Splash_Page.svg');
+    background-repeat: repeat-y;
+}
+
+.tracker-list {
+  height: 100%;
+  background-image: url('./assets/Somnus_Splash_Page.svg');
+  background-repeat: repeat-y;
+  color: white;
+}
+
+.tracker-content {
+  padding-top: 100px;
+}
+
+.search {
+  margin-top: 100px;
+}
+
+.menuImg {
+  background-image: url('./assets/Hamburger.png');
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+}
+
+.socialIcons {
+  background-image: url('./assets/Social_Media_Icons.png');
+  width: 50%;
+  height: 20%;  
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 23%;
+}
+
+.update-entry {
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -113,14 +258,52 @@
     font-size: 1.8rem;
     background-image: url('./assets/Somnus_Splash_Page.svg');
     background-repeat: no-repeat;
-    background-size: 100%;
-    align-items: center;  
+    background-size: 150%;
+    align-items: center;
 }
-.sleep-entry h1 {
-  color: white;
-  text-align: left;
-  font-size: 1.5rem;
-  margin-left: 2%;
+.update-entry form {
+  display: flex;
+  flex-direction: column;
+  margin: 4% 0;
+  margin-top: 100px;
+}
+
+.update-entry input, select, textarea {
+  margin: 4% 0;
+}
+
+.update-entry button {
+  background: #ffba08;
+	border-radius: 5px;
+	margin: 10% 0;
+	padding: 2%;
+	font-size: 18px;
+	border: none;
+	width: 50%;
+}
+
+.invisible-btn {
+  opacity: 0;
+}
+
+.edit-button {
+  background: #ffba08;
+	border-radius: 5px;
+	margin: 10% 4%;
+	padding: 2%;
+	font-size: 18px;
+	border: none;
+	width: 30%;
+}
+
+.delete-button {
+  background: red;
+	border-radius: 5px;
+	margin: 10% 4%;
+	padding: 2%;
+	font-size: 18px;
+	border: none;
+	width: 30%;
 }
 
 #page-wrap {
@@ -153,6 +336,7 @@
   height: 30px;
   right: 25px;
   top: 20px;
+  opacity: 0;
 }
 
 /* Color/shape of burger icon bars */
@@ -168,7 +352,7 @@
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: white;
 }
 
 /* General sidebar styles */
@@ -190,7 +374,6 @@
 
 /* Styling of overlay */
 .bm-overlay {
-  display: none;
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -201,4 +384,16 @@
 
 .avgFeel {
   font-size: 2rem;
+}
+
+canvas {
+  background: transparent;
+}
+
+.trackedData {
+  height: 100vh;
+  width: 101%;
+  background-image: url('./assets/Somnus_Splash_Page.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
