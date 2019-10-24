@@ -13,10 +13,10 @@ const TrackerList = props => {
 		return <Loader type='Rings' color='#00BFFF' height={100} width={100} />;
 	}
 
-	let feelToNum = props.data.map(item => {
-		return Number(item.feels);
-	});
-
+    let feelToNum = props.data.map((item) => {
+        return Number(item.feels)
+    })
+    
 	let feelAvg = feelToNum.reduce((item, acc) => item + acc, 0);
 
 	feelAvg = feelAvg / props.data.length;
@@ -26,9 +26,7 @@ const TrackerList = props => {
         props.history.push(`/trackerlist/${item.id}`)
     }
     
-    let feelToNum = props.data.map((item) => {
-        return Number(item.feels)
-    })
+   
 
 	console.log(feelAvg, props.data);
 
