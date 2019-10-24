@@ -1,3 +1,7 @@
+/* * {
+  border: 2px solid red;
+} */
+
 .App {
   text-align: center;
   font-family: azo-sans-web, sans-serif;
@@ -200,6 +204,18 @@
     background-image: url('./assets/Somnus_Splash_Page.svg');
     background-repeat: no-repeat;
     background-size: 150%;
+}
+
+.tracker-list {
+  height: 100vh;
+  background-image: url('./assets/Somnus_Splash_Page.svg');
+  background-repeat: no-repeat;
+  background-size: 150%;
+  color: white;
+}
+
+.tracker-content {
+  margin-top: 100px;
 }
 
 .search {

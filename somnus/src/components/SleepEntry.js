@@ -64,10 +64,7 @@ const SleepEntry = props => {
   };
 
   return (
-    <div className="sleep-entry" id="sleep-entry">      
-      {/* <div className="menuImg"></div>
-      <SideBar pageWrapId={"page-wrap"} outerContainerId={"sleep-entry"} /> */}
-      <div id="page-wrap">
+    <div className="sleep-entry">
         <SleepForm onSubmit={submitEntry}>
           <SleepFormLabel htmlFor="dateTimeFrom">From</SleepFormLabel>
           <TimeInput
@@ -123,8 +120,7 @@ const SleepEntry = props => {
           >
             Back
           </NavLink>
-        </SleepForm>
-      </div>
+        </SleepForm>      
     </div>
   );
 };
