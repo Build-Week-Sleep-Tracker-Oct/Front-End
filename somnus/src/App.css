@@ -59,6 +59,11 @@
 	width: 50%;
 }
 
+.loginButton a {
+  color: black;
+  text-decoration: none;
+}
+
 
 .signUp {
   display: flex;
@@ -267,7 +272,7 @@
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: white;
 }
 
 /* General sidebar styles */
