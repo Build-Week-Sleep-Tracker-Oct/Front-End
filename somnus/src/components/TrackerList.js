@@ -1,20 +1,25 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
-import Loader from 'react-loader-spinner'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import Loader from 'react-loader-spinner';
 
-import { fetchData } from '../actions'
-import Chart from './Chart'
-import Search from "./Search";
-import {Route} from "react-router-dom";
-import Alarm from './Alarm'
+import { fetchData } from '../actions';
+import Chart from './Chart';
+import Search from './Search';
+import { Route } from 'react-router-dom';
+import Alarm from './Alarm';
 
+const TrackerList = props => {
+	if (!props.data) {
+		return <Loader type='Rings' color='#00BFFF' height={100} width={100} />;
+	}
 
+	let feelToNum = props.data.map(item => {
+		return Number(item.feels);
+	});
 
-const TrackerList = (props) => {
+	let feelAvg = feelToNum.reduce((item, acc) => item + acc, 0);
 
-    if(!props.data) {
-        return <Loader type="Rings" color="#00BFFF" height={100} width={100} /> 
-    }
+	feelAvg = feelAvg / props.data.length;
 
     const entryRoute = (e, item) => {
         e.preventDefault()
@@ -25,9 +30,7 @@ const TrackerList = (props) => {
         return Number(item.feels)
     })
 
-    let feelAvg = feelToNum.reduce((item, acc) => (
-        item + acc
-    ), 0)
+	console.log(feelAvg, props.data);
 
     feelAvg = feelAvg / props.data.length
 
@@ -106,16 +109,15 @@ const TrackerList = (props) => {
 }
 
 const mapStatetoProps = state => {
-    return {
-        data: state.data,
-        isFetching: state.isFetching,
-        isPosting: state.isPosting,
-        error: state.error
-    }
-}
-
+	return {
+		data: state.data,
+		isFetching: state.isFetching,
+		isPosting: state.isPosting,
+		error: state.error,
+	};
+};
 
 export default connect(
-    mapStatetoProps,
-    { fetchData }
-)(TrackerList)
+	mapStatetoProps,
+	{ fetchData },
+)(TrackerList);
