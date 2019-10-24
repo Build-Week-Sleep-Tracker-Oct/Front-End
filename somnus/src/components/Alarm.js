@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment';
 import UIfx from 'uifx'
-import { useAsync } from 'react-async'
 
 import alarm from '../assets/alarm.wav'
 
@@ -14,16 +13,10 @@ const myAlarm = new UIfx (
 const Alarm = () => {
     const [alarm, setAlarm] = useState('')
     const [alarmSound, setAlarmSound] = useState()
-    const [intervalState, setIntervalState] = useState()
 
     const changeHandler = e => {
         setAlarm(e.target.value)
     }
-
-    const tick = () => {
-        
-    }
-
 
     useEffect(() => {
         // tick()
