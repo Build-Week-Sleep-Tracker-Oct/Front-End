@@ -43,7 +43,7 @@ const Alarm = () => {
         }
     }
     
-
+    // console.log(alarmSound)
     // console.log(alarm)
     // console.log(moment(alarm).format('MMMM DD YYYY h:mm:ss a'))
     return (

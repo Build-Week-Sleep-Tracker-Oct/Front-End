@@ -26,7 +26,6 @@ const TrackerList = props => {
         props.history.push(`/trackerlist/${item.id}`)
     }
 	console.log(feelAvg, props.data);
-    feelAvg = feelAvg / props.data.length
 
     // if(feelAvg === 4){
     //     return feelAvg = '😀'
