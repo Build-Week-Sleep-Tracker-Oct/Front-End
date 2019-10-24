@@ -385,3 +385,7 @@
 .avgFeel {
   font-size: 2rem;
 }
+
+canvas {
+  background: transparent;
+}
