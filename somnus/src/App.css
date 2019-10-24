@@ -98,15 +98,21 @@
 .login input[type=text] {
   border: none;
   border-bottom: 4px solid #000;
-
-  opacity: 0.2;
-
+  color: white;
+  opacity: 0.5;
+  outline: none;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
+  
 }
 
 .login input[type=password] {
+  color: white;
   border: none;
   border-bottom: 4px solid #000;
-  opacity: 0.2;
+  opacity: 0.5;
+  background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
+  background: transparent;
 }
 
 .entry {
