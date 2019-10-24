@@ -36,7 +36,6 @@ export const updateData = item => dispatch => {
         axiosWithAuth()
             .put(`/api/users/sleepdata/${item.id}`, item)
             .then(res => (
-                console.log(res.data),
                 dispatch({ type: UPDATE_SUCCESS, payload: res.data
                 })
             ))
@@ -52,7 +51,6 @@ export const deleteData = item => dispatch => {
         axiosWithAuth()
             .delete(`/api/users/sleepdata/${item.id}`, item)
             .then(res => (
-                console.log(res),
                 dispatch({ type: DELETION_SUCCESS, payload: res.data
                 })
             ))
