@@ -26,6 +26,7 @@ const App = (props) => {
     <Router>
       <div className="App">
         <nav>
+        <div className='somnusLogo'></div>
         <div className="menuImg"></div>
       <SideBar pageWrapId={"page-wrap"} outerContainerId={"sleep-entry"} />
         </nav>
