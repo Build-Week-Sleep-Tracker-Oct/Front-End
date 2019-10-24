@@ -174,10 +174,11 @@ const Search = props => {
           <NavLink
             to={"/trackerlist"}
             style={{
-              color: `black`,
+              color: `white`,
               fontSize: `1.4rem`,
               textDecoration: `none`,
-              textAlign: `left`
+              textAlign: `left`, 
+              marginLeft: '20px'
             }}
           >
             Back

@@ -167,7 +167,7 @@
 }
 
 .entry {
-  border: 2px solid black;
+  border: 10px solid white;
   margin: 1rem;
   background: linear-gradient(180deg, #9013FE 29.21%, #B260F9 100%);
 }
@@ -191,7 +191,7 @@
 	width: 50%;
 }
 
-.sleep-entry, .update-entry {  
+.sleep-entry, .update-entry, .search-form {  
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -201,11 +201,9 @@
     background-repeat: no-repeat;
     background-size: 150%;
 }
-.sleep-entry h1 {
-  color: white;
-  text-align: left;
-  font-size: 1.5rem;
-  margin-left: 2%;
+
+.search {
+  margin-top: 100px;
 }
 
 .menuImg {

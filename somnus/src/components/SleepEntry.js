@@ -9,6 +9,7 @@ const SleepForm = styled.form`
   display: flex;
   flex-direction: column;
   padding: 2%;
+  margin-top: 60px;
 `;
 
 const SleepFormLabel = styled.label`
