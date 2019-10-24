@@ -19,7 +19,6 @@ const Alarm = () => {
     }
 
     useEffect(() => {
-        // tick()
         
         const interval = setInterval(() => {
             setAlarmSound(moment().format('MMMM DD YYYY h:mm:ss a'))

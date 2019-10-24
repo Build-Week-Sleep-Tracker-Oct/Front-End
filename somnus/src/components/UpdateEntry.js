@@ -42,6 +42,12 @@ const UpdateEntry = props => {
         props.history.push('/trackerlist')
     }
 
+    const smiley = <span role="img" aria-labelledby='smiley'>😀</span>
+    const ok = <span role="img" aria-labelledby='ok'>😐</span>
+    const sad = <span role="img" aria-labelledby='sad'>😭</span>
+    const angry = <span role="img" aria-labelledby='angry'>😡</span>
+
+
     return (
         <div className="update-entry">
             <form onSubmit={handleSubmit}>
@@ -64,10 +70,10 @@ const UpdateEntry = props => {
             <input name="dateTimeTo" id="dateTimeTo" placeholder='123' type="datetime-local" onChange={changeHandler} value={entry.dateTimeTo} /> */}
                 <select name="feels" onChange={e => changeHandler(e)} value={entry.feels}>
                     <option selected disabled value="">Please choose how you feel</option>
-                    <option value="4">😀</option>
-                    <option value="3">😐</option>
-                    <option value="2">😭</option>
-                    <option value="1">😡</option>
+                    <option value="4">{smiley}</option>
+                    <option value="3">{ok}</option>
+                    <option value="2">{sad}</option>
+                    <option value="1">{angry}</option>
                 </select>
                 <textarea name="notes" id="notes" rows="10" cols="30" onChange={changeHandler} value={entry.notes} />
                 <button>Update</button>
