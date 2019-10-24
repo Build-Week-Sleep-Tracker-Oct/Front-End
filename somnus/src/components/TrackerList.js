@@ -39,6 +39,7 @@ const TrackerList = props => {
 
     return (
         <div className="tracker-list">
+            <div className="tracker-content">
             <Chart />
             <Alarm />
                 {props.isFetching ? 
@@ -94,7 +95,7 @@ const TrackerList = props => {
                 }
             })}
             <button className='addEntryButton' onClick={() => props.history.push('/sleepentry')}>Add Entry</button>
-            
+            </div>
         </div>
     )
 }

@@ -7,14 +7,12 @@ const Search = props => {
   //console.log(props);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  //const [start, setStart] = useState([]);
 
   useEffect(() => {
     axiosWithAuth()
       .get("/api/users/sleepdata")
       .then(response => {
         //console.log(response);
-        //setStart(response.data);
         const data = response.data.filter(mood =>
           mood.feels.includes(searchTerm)
         );
@@ -52,137 +50,86 @@ const Search = props => {
         </select>
       </form>
 
-      {
-        // searchResults.length === 0
-        // ? start.map(item => {
-        //     if (Number(item.feels) === 1) {
-        //       return (
-        //         <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
-        //           <p>😡</p>
-        //           <p>{item.notes}</p>
-        //           <p>{item.dateTimeFrom}</p>
-        //           <p>{item.dateTimeTo}</p>
-        //         </div>
-        //       );
-        //     } else if (Number(item.feels) === 2) {
-        //       return (
-        //         <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
-        //           <p>😭</p>
-        //           <p>{item.notes}</p>
-        //           <p>{item.dateTimeFrom}</p>
-        //           <p>{item.dateTimeTo}</p>
-        //         </div>
-        //       );
-        //     } else if (Number(item.feels) === 3) {
-        //       return (
-        //         <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
-        //           <p>😐</p>
-        //           <p>{item.notes}</p>
-        //           <p>{item.dateTimeFrom}</p>
-        //           <p>{item.dateTimeTo}</p>
-        //         </div>
-        //       );
-        //     } else if (Number(item.feels) === 4) {
-        //       return (
-        //         <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
-        //           <p>😀</p>
-        //           <p>{item.notes}</p>
-        //           <p>{item.dateTimeFrom}</p>
-        //           <p>{item.dateTimeTo}</p>
-        //         </div>
-        //       );
-        //     } else {
-        //       return (
-        //         <div className="entry" key={item.id} onClick={e => entryRoute(e, item)}>
-        //           <p>{item.feels}</p>
-        //           <p>{item.notes}</p>
-        //           <p>{item.dateTimeFrom}</p>
-        //           <p>{item.dateTimeTo}</p>
-        //         </div>
-        //       );
-        //     }
-        //   })
-        // : 
-        searchResults.map(item => {
-            if (Number(item.feels) === 1) {
-              return (
-                <div
-                  className="entry"
-                  key={item.id}
-                  onClick={e => entryRoute(e, item)}
-                >
-                  <p>😡</p>
-                  <p>{item.notes}</p>
-                  <p>{item.dateTimeFrom}</p>
-                  <p>{item.dateTimeTo}</p>
-                </div>
-              );
-            } else if (Number(item.feels) === 2) {
-              return (
-                <div
-                  className="entry"
-                  key={item.id}
-                  onClick={e => entryRoute(e, item)}
-                >
-                  <p>😭</p>
-                  <p>{item.notes}</p>
-                  <p>{item.dateTimeFrom}</p>
-                  <p>{item.dateTimeTo}</p>
-                </div>
-              );
-            } else if (Number(item.feels) === 3) {
-              return (
-                <div
-                  className="entry"
-                  key={item.id}
-                  onClick={e => entryRoute(e, item)}
-                >
-                  <p>😐</p>
-                  <p>{item.notes}</p>
-                  <p>{item.dateTimeFrom}</p>
-                  <p>{item.dateTimeTo}</p>
-                </div>
-              );
-            } else if (Number(item.feels) === 4) {
-              return (
-                <div
-                  className="entry"
-                  key={item.id}
-                  onClick={e => entryRoute(e, item)}
-                >
-                  <p>😀</p>
-                  <p>{item.notes}</p>
-                  <p>{item.dateTimeFrom}</p>
-                  <p>{item.dateTimeTo}</p>
-                </div>
-              );
-            } else {
-              return (
-                <div
-                  className="entry"
-                  key={item.id}
-                  onClick={e => entryRoute(e, item)}
-                >
-                  <p>{item.feels}</p>
-                  <p>{item.notes}</p>
-                  <p>{item.dateTimeFrom}</p>
-                  <p>{item.dateTimeTo}</p>
-                </div>
-              );
-            }
-          })}
-          <NavLink
-            to={"/trackerlist"}
-            style={{
-              color: `white`,
-              fontSize: `1.4rem`,
-              textDecoration: `none`,
-              textAlign: `left`, 
-              marginLeft: '20px'
-            }}
-          >
-            Back
-          </NavLink>
+      {searchResults.map(item => {
+        if (Number(item.feels) === 1) {
+          return (
+            <div
+              className="entry"
+              key={item.id}
+              onClick={e => entryRoute(e, item)}
+            >
+              <p>😡</p>
+              <p>{item.notes}</p>
+              <p>{item.dateTimeFrom}</p>
+              <p>{item.dateTimeTo}</p>
+            </div>
+          );
+        } else if (Number(item.feels) === 2) {
+          return (
+            <div
+              className="entry"
+              key={item.id}
+              onClick={e => entryRoute(e, item)}
+            >
+              <p>😭</p>
+              <p>{item.notes}</p>
+              <p>{item.dateTimeFrom}</p>
+              <p>{item.dateTimeTo}</p>
+            </div>
+          );
+        } else if (Number(item.feels) === 3) {
+          return (
+            <div
+              className="entry"
+              key={item.id}
+              onClick={e => entryRoute(e, item)}
+            >
+              <p>😐</p>
+              <p>{item.notes}</p>
+              <p>{item.dateTimeFrom}</p>
+              <p>{item.dateTimeTo}</p>
+            </div>
+          );
+        } else if (Number(item.feels) === 4) {
+          return (
+            <div
+              className="entry"
+              key={item.id}
+              onClick={e => entryRoute(e, item)}
+            >
+              <p>😀</p>
+              <p>{item.notes}</p>
+              <p>{item.dateTimeFrom}</p>
+              <p>{item.dateTimeTo}</p>
+            </div>
+          );
+        } else {
+          return (
+            <div
+              className="entry"
+              key={item.id}
+              onClick={e => entryRoute(e, item)}
+            >
+              <p>{item.feels}</p>
+              <p>{item.notes}</p>
+              <p>{item.dateTimeFrom}</p>
+              <p>{item.dateTimeTo}</p>
+            </div>
+          );
+        }
+      })}
+      <NavLink
+        to={"/trackerlist"}
+        style={{
+          color: `white`,
+          fontSize: `1.4rem`,
+          textDecoration: `none`,
+          textAlign: `left`,
+          marginLeft: "20px"
+        }}
+      >
+        Back
+      </NavLink>
     </section>
   );
 };
