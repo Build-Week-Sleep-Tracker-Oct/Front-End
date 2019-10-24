@@ -180,9 +180,9 @@
 
 .individaulEntry {
   padding-top: 100px;  
-  background-image: url('./assets/Somnus_Splash_Page.svg');
+  /* background-image: url('./assets/Somnus_Splash_Page.svg');
   background-repeat: no-repeat;
-  background-size: 150%;
+  background-size: 150%; */
 }
 
 .addEntryButton {
@@ -388,4 +388,12 @@
 
 canvas {
   background: transparent;
+}
+
+.trackedData {
+  height: 100vh;
+  width: 101%;
+  background-image: url('./assets/Somnus_Splash_Page.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
