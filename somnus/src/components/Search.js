@@ -7,14 +7,14 @@ const Search = props => {
   //console.log(props);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [start, setStart] = useState([]);
+  //const [start, setStart] = useState([]);
 
   useEffect(() => {
     axiosWithAuth()
       .get("/api/users/sleepdata")
       .then(response => {
         //console.log(response);
-        setStart(response.data);
+        //setStart(response.data);
         const data = response.data.filter(mood =>
           mood.feels.includes(searchTerm)
         );

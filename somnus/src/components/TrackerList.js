@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 
 import { fetchData } from '../actions';
 import Chart from './Chart';
-import Search from './Search';
-import { Route } from 'react-router-dom';
 import Alarm from './Alarm';
 
 const TrackerList = props => {
@@ -40,7 +38,7 @@ const TrackerList = props => {
     console.log(feelAvg, props.data)
 
     return (
-        <div>
+        <div className="tracker-list">
             <Chart />
             <Alarm />
                 {props.isFetching ? 

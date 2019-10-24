@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import { connect } from 'react-redux'
 
 import { fetchData } from './actions'

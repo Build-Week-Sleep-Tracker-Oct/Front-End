@@ -18,17 +18,18 @@ const SleepFormLabel = styled.label`
 
 const TimeInput = styled.input`
   margin: 4% 0;
-  width: 90%;
+  width: 50%;
 `;
 
 const MoodInput = styled.select`
   margin: 4% 0;
-  width: 90%;
+  width: 50%;
 `;
 
 const NoteInput = styled.textarea`
   margin: 4% 0;
-  width: 95%;
+  width: 90%;
+  font-family: azo-sans-web, sans-serif;
 `;
 
 const SubmitButton = styled.button`
@@ -62,7 +63,7 @@ const SleepEntry = props => {
   };
 
   return (
-    <div className="sleep-entry" id="slepp-entry">
+    <div className="sleep-entry" id="sleep-entry">
       <h1>Somnus</h1>
       <SideBar pageWrapId={"page-wrap"} outerContainerId={"sleep-entry"} />
       <div id="page-wrap">
