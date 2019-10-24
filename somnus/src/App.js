@@ -33,10 +33,11 @@ const App = (props) => {
         <Switch>
           <PrivateRoute exact path='/trackerlist' component={TrackerList} />
           <PrivateRoute exact path='/sleepentry' component={SleepEntry} />
-          <div className='trackedData'>
+          
             <Route path='/trackerlist/:id' render={props => (
-              <TrackedData {...props} /> )} /> 
-          </div>
+              <div className='trackedData'> <TrackedData {...props}  /> </div> )} 
+            /> 
+          
           <Route path='/edit-tracker/:id' render={props => (
             <UpdateEntry {...props} updateData={props.data} />
           )} />
