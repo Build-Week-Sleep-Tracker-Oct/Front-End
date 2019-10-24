@@ -66,10 +66,11 @@ const Chart = props => {
         datasets: [{
                 label: 'Time Slept',
                 borderColor: 'white',
-                data: nightlyData
+                data: nightlyData,
+                
             },{
                 label: 'Feels',
-                borderColor: 'light grey',
+                borderColor: 'yellow',
                 data: feelingNumber
             }]
     }
@@ -82,6 +83,10 @@ const Chart = props => {
             display: true,
             labelString: 'Hours Slept'
           },
+          gridLines: {
+            display: true,
+            color: "black"
+          },
           ticks: {
             beginAtZero: true
           }
@@ -90,7 +95,11 @@ const Chart = props => {
           scaleLabel: {
             display: true,
             labelString: 'Entry Number'
-          }
+          },
+          gridLines: {
+            display: true,
+            color: "black"
+          },
         }]
       }
     }
