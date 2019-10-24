@@ -12,6 +12,7 @@ import PrivateRoute from './components/PrivateRoute';
 import SleepEntry from './components/SleepEntry';
 import TrackedData from './components/TrackedData';
 import UpdateEntry from './components/UpdateEntry';
+import Search from "./components/Search";
 
 const App = (props) => {
   useEffect(() => {
@@ -31,6 +32,7 @@ const App = (props) => {
           <Route path='/edit-tracker/:id' render={props => (
             <UpdateEntry {...props} updateData={props.data} />
           )} />
+          <Route path="/search" render={() => <Search {...props} data={props.data} />} />
           <Route exact path='/' component={Login} />
           <Route exact path='/signup' component={SignUp} />
         </Switch>

@@ -26,7 +26,11 @@ const TrackerList = props => {
         props.history.push(`/trackerlist/${item.id}`)
     }
     
+<<<<<<< HEAD
    
+=======
+    
+>>>>>>> 69fb04b0dfbbb2216743775b9870696f07de3579
 
 	console.log(feelAvg, props.data);
 
@@ -60,7 +64,7 @@ const TrackerList = props => {
             <p className='avgFeel'>{feelAvg >= 3 && feelAvg < 4 ? 'Your average sleep is 😐' : ''}</p>
             <p className='avgFeel'>{feelAvg >= 2 && feelAvg < 3 ? 'Your average sleep is 😭' : ''}</p>
             <p className='avgFeel'>{feelAvg >= 1 && feelAvg < 2 ? 'Your average sleep is 😡' : ''}</p>
-            <Route render={() => <Search {...props} data={props.data} />} />
+            <button className='searchButton' onClick={() => props.history.push('/search')}>Search</button>
             {props.data.map(item => {
                 if(Number(item.feels) === 1){
                     return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
