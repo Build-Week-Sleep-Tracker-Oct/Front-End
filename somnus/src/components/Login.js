@@ -60,6 +60,7 @@ class Login extends Component {
                 </button>
 
                 <p>Or Sign Up With:</p>
+                <div className="socialIcons"></div>
 
             </div>
         )
