@@ -25,17 +25,10 @@ const TrackerList = props => {
     }
 	console.log(feelAvg, props.data);
 
-    // if(feelAvg === 4){
-    //     return feelAvg = '😀'
-    // } else if (feelAvg > 3 && feelAvg < 2){
-    //     return feelAvg = '😐'
-    // } else if (feelAvg > 2 && feelAvg < 3) {
-    //     return feelAvg = '😭'
-    // } else if(feelAvg >= 1 && feelAvg < 2) {
-    //     return feelAvg = '😡'
-    // }
-
-    console.log(feelAvg, props.data)
+    const smiley = <span role="img" aria-labelledby='smiley'>😀</span>
+    const ok = <span role="img" aria-labelledby='ok'>😐</span>
+    const sad = <span role="img" aria-labelledby='sad'>😭</span>
+    const angry = <span role="img" aria-labelledby='angry'>😡</span>
 
     return (
         <div className="tracker-list">
@@ -58,28 +51,28 @@ const TrackerList = props => {
                 {props.data.map(item => {
                     if(Number(item.feels) === 1){
                         return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
-                                    <p>😡</p>
+                                    <p>{angry}</p>
                                     <p>{item.notes}</p>
                                     <p>{item.dateTimeFrom}</p>
                                     <p>{item.dateTimeTo}</p>
                                 </div>
                     } else if(Number(item.feels) === 2) {
                         return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
-                                    <p>😭</p>
+                                    <p>{sad}</p>
                                     <p>{item.notes}</p>
                                     <p>{item.dateTimeFrom}</p>
                                     <p>{item.dateTimeTo}</p>
                                 </div>
                     } else if(Number(item.feels) === 3) {
                         return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
-                                    <p>😐</p>
+                                    <p>{ok}</p>
                                     <p>{item.notes}</p>
                                     <p>{item.dateTimeFrom}</p>
                                     <p>{item.dateTimeTo}</p>
                                 </div>
                     } else if(Number(item.feels) === 4) {
                         return <div className='entry' key={item.id} onClick={e => entryRoute(e, item)}>
-                                    <p>😀</p>
+                                    <p>{smiley}</p>
                                     <p>{item.notes}</p>
                                     <p>{item.dateTimeFrom}</p>
                                     <p>{item.dateTimeTo}</p>

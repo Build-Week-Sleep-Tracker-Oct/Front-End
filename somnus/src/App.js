@@ -16,6 +16,8 @@ import Search from "./components/Search";
 import SideBar from "./components/sidebar";
 
 const App = (props) => {
+
+  console.log(props.isPosting)
   useEffect(() => {
     props.fetchData()
     

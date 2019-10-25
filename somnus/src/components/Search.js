@@ -34,6 +34,11 @@ const Search = props => {
     return <Loader type="Rings" color="#00BFFF" height={100} width={100} />;
   }
 
+  const smiley = <span role="img" aria-labelledby='smiley'>😀</span>
+  const ok = <span role="img" aria-labelledby='ok'>😐</span>
+  const sad = <span role="img" aria-labelledby='sad'>😭</span>
+  const angry = <span role="img" aria-labelledby='angry'>😡</span>
+
   return (
     <section className="search-form">
       <form className="search">
@@ -43,10 +48,10 @@ const Search = props => {
           value={searchTerm}
         >
           <option value="">Search by mood</option>
-          <option value="4">😀</option>
-          <option value="3">😐</option>
-          <option value="2">😭</option>
-          <option value="1">😡</option>
+          <option value="4">{smiley}</option>
+          <option value="3">{ok}</option>
+          <option value="2">{sad}</option>
+          <option value="1">{angry}</option>
         </select>
       </form>
 
@@ -58,7 +63,7 @@ const Search = props => {
               key={item.id}
               onClick={e => entryRoute(e, item)}
             >
-              <p>😡</p>
+              <p>{angry}</p>
               <p>{item.notes}</p>
               <p>{item.dateTimeFrom}</p>
               <p>{item.dateTimeTo}</p>
@@ -71,7 +76,7 @@ const Search = props => {
               key={item.id}
               onClick={e => entryRoute(e, item)}
             >
-              <p>😭</p>
+              <p>{sad}</p>
               <p>{item.notes}</p>
               <p>{item.dateTimeFrom}</p>
               <p>{item.dateTimeTo}</p>
@@ -84,7 +89,7 @@ const Search = props => {
               key={item.id}
               onClick={e => entryRoute(e, item)}
             >
-              <p>😐</p>
+              <p>{ok}</p>
               <p>{item.notes}</p>
               <p>{item.dateTimeFrom}</p>
               <p>{item.dateTimeTo}</p>
@@ -97,7 +102,7 @@ const Search = props => {
               key={item.id}
               onClick={e => entryRoute(e, item)}
             >
-              <p>😀</p>
+              <p>{smiley}</p>
               <p>{item.notes}</p>
               <p>{item.dateTimeFrom}</p>
               <p>{item.dateTimeTo}</p>
