@@ -19,7 +19,6 @@ const Alarm = () => {
     }
 
     useEffect(() => {
-        
         const interval = setInterval(() => {
             setAlarmSound(moment().format('MMMM DD YYYY h:mm:ss a'))
         }, 1000)
@@ -34,25 +33,19 @@ const Alarm = () => {
             myAlarm.play()
         }
     }
-    
-    // console.log(alarmSound)
-    // console.log(alarm)
-    // console.log(moment(alarm).format('MMMM DD YYYY h:mm:ss a'))
+
     return (
         <div>
             <p>Alarm</p>
             <input name="alarm" id="alarm" type="datetime-local" 
             onChange={changeHandler} />
-
             <p>
                 {!alarm ? 'Alarm is not set' : 
                 <>Alarm is set for {moment(alarm).format('MMMM DD YYYY h:mm a')}</>
                 }
-                
             </p>
             {alarmCall()}
         </div>
-        
     )
 }
 
