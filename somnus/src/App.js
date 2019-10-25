@@ -15,13 +15,13 @@ import UpdateEntry from './components/UpdateEntry';
 import Search from "./components/Search";
 import SideBar from "./components/sidebar";
 
-const App = (props) => {
+const App = ({isPosting, fetchData}) => {
 
-  console.log(props.isPosting)
+  console.log(isPosting)
   useEffect(() => {
-    props.fetchData()
+    fetchData()
     
-}, [props.isPosting])
+}, [isPosting])
 
 
   return (
@@ -41,7 +41,7 @@ const App = (props) => {
             /> 
           
           <Route path='/edit-tracker/:id' render={props => (
-            <UpdateEntry {...props} updateData={props.data} />
+            <UpdateEntry {...props}  />
           )} />
           <Route path="/search" component={Search} />
           <Route exact path='/' component={Login} />

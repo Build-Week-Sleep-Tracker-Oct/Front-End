@@ -95,10 +95,10 @@ const SleepEntry = props => {
             value={entry.feels}
           >
             <option value="">Please choose how you feel</option>
-            <option value="4">{smiley}</option>
-            <option value="3">{ok}</option>
-            <option value="2">{sad}</option>
-            <option value="1">{angry}</option>
+            <option value="4">😀</option>
+            <option value="3">😐</option>
+            <option value="2">😭</option>
+            <option value="1">😡</option>
           </MoodInput>
 
           <SleepFormLabel htmlFor="notes">notes</SleepFormLabel>
