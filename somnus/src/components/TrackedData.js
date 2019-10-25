@@ -34,10 +34,7 @@ const TrackedData = props => {
 
 const mapStatetoProps = state => {
     return {
-        data: state.data,
-        isFetching: state.isFetching,
-        isPosting: state.isPosting,
-        error: state.error
+        data: state.data
     }
   }
   
