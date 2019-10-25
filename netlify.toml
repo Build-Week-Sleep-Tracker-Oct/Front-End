@@ -1,8 +1,3 @@
-[build]
-  base    = "./somnus"
-  publish = "./somnus/build"
-  command = "yarn build"  
-  
 [[redirects]]
   from = "/*"
   to = "/index.html"
