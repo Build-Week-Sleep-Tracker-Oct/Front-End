@@ -62,11 +62,6 @@ const SleepEntry = props => {
     //addNewEntry
   };
 
-  const smiley = <span role="img" aria-labelledby='smiley'>:grinning:</span>
- const ok = <span role="img" aria-labelledby='ok'>:neutral_face:</span>
- const sad = <span role="img" aria-labelledby='sad'>:sob:</span>
- const angry = <span role="img" aria-labelledby='angry'>:rage:</span>
-
   return (
     <div className="sleep-entry">
         <SleepForm onSubmit={submitEntry}>
