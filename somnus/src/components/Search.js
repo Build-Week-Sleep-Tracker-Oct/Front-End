@@ -4,7 +4,6 @@ import Loader from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
 
 const Search = props => {
-  //console.log(props);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -12,7 +11,6 @@ const Search = props => {
     axiosWithAuth()
       .get("/api/users/sleepdata")
       .then(response => {
-        //console.log(response);
         const data = response.data.filter(mood =>
           mood.feels.includes(searchTerm)
         );
@@ -48,10 +46,10 @@ const Search = props => {
           value={searchTerm}
         >
           <option value="">Search by mood</option>
-          <option value="4">{smiley}</option>
-          <option value="3">{ok}</option>
-          <option value="2">{sad}</option>
-          <option value="1">{angry}</option>
+          <option value="4">😀</option>
+          <option value="3">😐</option>
+          <option value="2">😭</option>
+          <option value="1">😡</option>
         </select>
       </form>
 

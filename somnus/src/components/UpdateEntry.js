@@ -9,13 +9,12 @@ const initialEntry = {
     feels: '',
     notes: ''
 }
+
 const UpdateEntry = props => {
     const [entry, setEntry] = useState(initialEntry)
 
     const entryToEdit = props.data.find(item => item.id === Number(props.match.params.id))
     
-    
-
     useEffect(() => {
         if(entryToEdit) {
             setEntry(entryToEdit)
@@ -27,7 +26,6 @@ const UpdateEntry = props => {
         return <Loader type="Rings" color="#00BFFF" height={100} width={100} /> 
     }
     
-
     const changeHandler = e => {
         e.preventDefault()
         setEntry({
@@ -41,12 +39,6 @@ const UpdateEntry = props => {
         props.updateData(entry)
         props.history.push('/trackerlist')
     }
-
-    // const smiley = <span role="img" aria-labelledby='smiley'>😀</span>
-    // const ok = <span role="img" aria-labelledby='ok'>😐</span>
-    // const sad = <span role="img" aria-labelledby='sad'>😭</span>
-    // const angry = <span role="img" aria-labelledby='angry'>😡</span>
-
 
     return (
         <div className="update-entry">
@@ -66,8 +58,7 @@ const UpdateEntry = props => {
                     value={entry.dateTimeTo}
                 />
             
-            {/* <input name="dateTimeFrom" id="dateTimeFrom" type="datetime-local" onChange={changeHandler} value={entry.dateTimeFrom} />
-            <input name="dateTimeTo" id="dateTimeTo" placeholder='123' type="datetime-local" onChange={changeHandler} value={entry.dateTimeTo} /> */}
+            
                 <select name="feels" onChange={e => changeHandler(e)} value={entry.feels}>
                     <option selected disabled value="">Please choose how you feel</option>
                     <option value="4">😀</option>
@@ -84,10 +75,7 @@ const UpdateEntry = props => {
 
 const mapStatetoProps = state => {
     return {
-        data: state.data,
-        isFetching: state.isFetching,
-        isPosting: state.isPosting,
-        error: state.error
+        data: state.data
     }
   }
   

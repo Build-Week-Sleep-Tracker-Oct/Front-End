@@ -1,6 +1,5 @@
 import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, START_POSTING, POST_SUCCESS, POST_FAILURE, START_UPDATING, UPDATE_SUCCESS, UPDATE_FAILURE, START_DELETION, DELETION_SUCCESS, DELETION_FAILURE } from '../actions';
 
-
 const initialState = {
     data: [],
     isFetching: false,
@@ -10,9 +9,7 @@ const initialState = {
     error: ''
 }
 
-
 const reducer = (state = initialState, action) => {
-    // console.log(state)
     switch(action.type) {
         case START_FETCHING:
             return {
@@ -65,19 +62,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 isUpdating: false,
                 error: '',
-                data: 
-                // state.data.map(item => {
-                //     action.payload.map(item2 => {
-                //         if(item.id === item2.id) {
-                //             return item = item2
-                //         } else {
-                //             return item
-                //         }
-                //     })
-                //     return item
-                // })
-
-                state.data.map(item => {
+                data: state.data.map(item => {
                     if(item.id === action.payload.id) {
                         return item = action.payload
                     } else {

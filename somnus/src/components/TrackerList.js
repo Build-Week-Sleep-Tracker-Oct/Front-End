@@ -23,7 +23,6 @@ const TrackerList = props => {
         e.preventDefault()
         props.history.push(`/trackerlist/${item.id}`)
     }
-	console.log(feelAvg, props.data);
 
     const smiley = <span role="img" aria-labelledby='smiley'>😀</span>
     const ok = <span role="img" aria-labelledby='ok'>😐</span>
@@ -35,14 +34,14 @@ const TrackerList = props => {
             <div className="tracker-content">
                 <Chart />
                 <Alarm />
-                    {props.isFetching ? 
-                    <Loader
-                        type="Rings"
-                        color="#00BFFF"
-                        height={100}
-                        width={100}
-                    /> 
-                    : ''}
+                {props.isFetching ? 
+                <Loader
+                    type="Rings"
+                    color="#00BFFF"
+                    height={100}
+                    width={100}
+                /> 
+                : ''}
                 <p className='avgFeel'>{feelAvg === 4 ? 'Your average sleep is 😀' : ''}</p>
                 <p className='avgFeel'>{feelAvg >= 3 && feelAvg < 4 ? 'Your average sleep is 😐' : ''}</p>
                 <p className='avgFeel'>{feelAvg >= 2 && feelAvg < 3 ? 'Your average sleep is 😭' : ''}</p>

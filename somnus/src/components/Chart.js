@@ -5,10 +5,7 @@ import { Line } from 'react-chartjs-2'
 
 
 const Chart = props => {
-
-    
     let sleepFrom = props.data.map(item => {
-        // return item.dateTimeFrom
         return new Date(item.dateTimeFrom).getHours()
     })
 
@@ -58,8 +55,6 @@ const Chart = props => {
 
     let nightlyData = compare(sleepFrom, sleepTo)
 
-  
-
     const data = {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
         datasets: [{
@@ -73,7 +68,6 @@ const Chart = props => {
                 data: feelingNumber
             }]
     }
-
     const options = {
       maintainAspectRation: false,
       scales: {
@@ -115,10 +109,7 @@ const Chart = props => {
 
 const mapStatetoProps = state => {
     return {
-        data: state.data,
-        isFetching: state.isFetching,
-        isPosting: state.isPosting,
-        error: state.error
+        data: state.data
     }
 }
 
